@@ -1,0 +1,18 @@
+extends: airbnb
+rules:
+  class-methods-use-this: off
+  no-underscore-dangle: off
+  react/jsx-filename-extension: off
+  react/jsx-one-expression-per-line: off
+  import/no-extraneous-dependencies: off
+  no-console: off
+  react/prefer-stateless-function:
+    - enabled
+    - ignorePureComponents: true
+  react/no-multi-comp: off
+  max-len:
+    - error
+    - code: 120
+env:
+  jest: true
+  browser: true

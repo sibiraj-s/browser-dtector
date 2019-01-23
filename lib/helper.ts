@@ -1,0 +1,31 @@
+export const KnownBrowsers = {
+  chrome: 'Google Chrome',
+  crios: 'Google Chrome',
+  edge: 'Microsoft Edge',
+  fennec: 'Mozilla Firefox',
+  jsdom: 'JsDOM',
+  mozilla: 'Mozilla Firefox',
+  msie: 'Microsoft Internet Explorer',
+  opera: 'Opera',
+  opios: 'Opera',
+  opr: 'Opera',
+  rv: 'Microsoft Internet Explorer',
+  safari: 'Safari',
+  samsungbrowser: 'Samsung Browser',
+};
+
+export const KnownPlatforms = {
+  'android': 'Android',
+  'androidTablet': 'Android Tablet',
+  'cros': 'Chrome OS',
+  'fennec': 'Android Tablet',
+  'ipad': 'IPad',
+  'iphone': 'IPhone',
+  'jsdom': 'JsDOM',
+  'linux': 'Linux',
+  'mac': 'Macintosh',
+  'tablet': 'Android Tablet',
+  'win': 'Windows',
+  'windows phone': 'Windows Phone',
+  'xbox': 'Microsoft Xbox',
+};
