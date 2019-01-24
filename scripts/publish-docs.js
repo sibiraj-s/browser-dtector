@@ -1,12 +1,21 @@
 const inquirer = require('inquirer');
 const ghpages = require('gh-pages');
 const chalk = require('chalk');
+const argv = require('yargs-parser')(process.argv.slice(2));
 
 const packageJson = require('../package.json');
 
+if (!Object.keys(argv).some(method => method === 'update' || method === 'release')) {
+  console.log(chalk.red('Error: Must Specify a relase method as arguments, either \'--update\' or \'--release\''));
+  process.exit();
+}
+
+const releaseMessage = `docs: ${packageJson.name} v${packageJson.version}`;
+const updateMessage = `docs: update ${new Date().toISOString()}`;
+
 const ghPagesOptions = {
   branch: 'gh-pages',
-  message: `docs: ${packageJson.name} v${packageJson.version}`,
+  message: argv.update ? updateMessage : releaseMessage,
 };
 
 inquirer

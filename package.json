@@ -28,7 +28,9 @@
 		"lint": "npm run lint:es && npm run lint:ts",
 		"prepublishOnly": "node ./scripts/prepublish.js",
 		"prepublish:docs": "npm run build:docs",
-		"publish:docs": "node ./scripts/publish-docs.js",
+		"preupdate:docs": "npm run build:docs",
+		"publish:docs": "node ./scripts/publish-docs.js --release",
+		"update:docs": "node ./scripts/publish-docs.js --update",
 		"prerelease": "npm run build",
 		"release": "sh ./scripts/release.sh"
 	},
@@ -75,6 +77,7 @@
 		"terser": "^3.14.1",
 		"tslib": "^1.9.3",
 		"tslint": "^5.12.1",
-		"typescript": "^3.2.4"
+		"typescript": "^3.2.4",
+		"yargs-parser": "^11.1.1"
 	}
 }
