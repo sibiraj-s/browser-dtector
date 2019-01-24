@@ -110,8 +110,8 @@ console.log('Server running at http://127.0.0.1:8080/');
 
 ### Demo
 
-- Browser Detector: https://sibiraj-s.github.io/browser-dtector/#/
-- UserAgent Parser: https://sibiraj-s.github.io/browser-dtector/#/ua-parser/
+- Browser Detector: <https://sibiraj-s.github.io/browser-dtector/#/>
+- UserAgent Parser: <https://sibiraj-s.github.io/browser-dtector/#/ua-parser/>
 
 ### API
 
