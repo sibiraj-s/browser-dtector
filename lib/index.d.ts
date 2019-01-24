@@ -1,4 +1,4 @@
-export interface IBrowserInfo {
+interface IBrowserInfo {
   name: string;
   version: string;
   shortVersion?: string;

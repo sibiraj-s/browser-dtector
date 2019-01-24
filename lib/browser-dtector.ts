@@ -1,5 +1,4 @@
 import { KnownBrowsers, KnownPlatforms } from './helper';
-import { IBrowserInfo } from './types';
 
 import { version as pkgVersion } from '../package.json';
 
