@@ -3,17 +3,19 @@ import React from 'react';
 import BrowserDtectorComponent from './BrowserDtector';
 import UserAgentParserComponent from './UserAgentParser';
 
-import { Route, Switch } from 'react-router-dom';
+import { HashRouter, Switch, Route } from 'react-router-dom';
 
 class App extends React.PureComponent {
   render() {
     return (
       <div className="container">
-        <Switch>
-          <Route path="/" exact component={BrowserDtectorComponent} />
-          <Route path="/ua-parser" component={UserAgentParserComponent} />
-          <Route component={BrowserDtectorComponent} />
-        </Switch>
+        <HashRouter>
+          <Switch>
+            <Route path="/" exact component={BrowserDtectorComponent} />
+            <Route path="/ua-parser" component={UserAgentParserComponent} />
+            <Route component={BrowserDtectorComponent} />
+          </Switch>
+        </HashRouter>
       </div>
     );
   }
