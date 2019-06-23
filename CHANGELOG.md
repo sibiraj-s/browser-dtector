@@ -13,7 +13,7 @@ All notable changes to this project will be documented in this file.
 > - Internal
 > - Unreleased
 
-## Unreleased
+## v1.0.1 (2019-06-23)
 
 #### Enhancements
 
