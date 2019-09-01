@@ -7,9 +7,12 @@ rules:
   import/no-extraneous-dependencies: off
   no-console: off
   react/prefer-stateless-function:
-    - enabled
+    - error
     - ignorePureComponents: true
   react/no-multi-comp: off
+  react/jsx-fragments:
+    - error
+    - element
   max-len:
     - error
     - code: 120
