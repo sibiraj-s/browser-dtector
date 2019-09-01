@@ -1,12 +1,12 @@
+@import url("https://fonts.googleapis.com/css?family=Inconsolata:400,700");
+
+$crimson: #dc143c;
+
 *,
 :after,
 :before {
   box-sizing: border-box;
 }
-
-@import url("https://fonts.googleapis.com/css?family=Inconsolata:400,700");
-
-$crimson: #dc143c;
 
 html,
 body {
@@ -113,7 +113,7 @@ body {
     position: absolute;
     bottom: 0.5rem;
     left: 1rem;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
 
     @media only screen and (max-height: 300px) {
       display: none;
