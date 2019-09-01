@@ -5,8 +5,6 @@ import BrowserDtector from '../dist/lib/browser-dtector';
 const currentUserAgent = window.navigator.userAgent;
 const browser = new BrowserDtector(currentUserAgent);
 
-const toLowerCase = str => str.toLowerCase().replace(/\s\s+/g, ' ');
-
 class UserAgentParserComponent extends React.PureComponent {
   constructor() {
     super();
@@ -56,8 +54,8 @@ class UserAgentParserComponent extends React.PureComponent {
                 <p className="parsed-results__title">Parsed Results:</p>
                 <table>
                   <tbody>
-                    {parsedUAForHTML.map(item => (
-                      <tr key={toLowerCase(item.key)}><td>{item.key}</td><td>: {item.value.toString()}</td></tr>
+                    {parsedUAForHTML.map((item) => (
+                      <tr key={item.key}><td>{item.key}</td><td>: {item.value.toString()}</td></tr>
                     ))}
                   </tbody>
                 </table>

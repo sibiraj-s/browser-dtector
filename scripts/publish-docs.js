@@ -5,7 +5,7 @@ const argv = require('yargs-parser')(process.argv.slice(2));
 
 const packageJson = require('../package.json');
 
-if (!Object.keys(argv).some(method => method === 'update' || method === 'release')) {
+if (!Object.keys(argv).some((method) => method === 'update' || method === 'release')) {
   console.log(chalk.red('Error: Must Specify a relase method as arguments, either \'--update\' or \'--release\''));
   process.exit();
 }
