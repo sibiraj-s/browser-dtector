@@ -9,7 +9,7 @@
   "homepage": "https://github.com/sibiraj-s/browser-dtector#readme",
   "bugs": "https://github.com/sibiraj-s/browser-dtector/issues",
   "engines": {
-    "node": "^10"
+    "node": "12"
   },
   "scripts": {
     "rollup": "rollup -c",
