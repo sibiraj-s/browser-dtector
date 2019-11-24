@@ -16,6 +16,9 @@ rules:
   max-len:
     - error
     - code: 120
+  quote-props:
+    - error
+    - consistent
 env:
   jest: true
   browser: true

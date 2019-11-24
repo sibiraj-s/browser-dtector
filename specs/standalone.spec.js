@@ -1,7 +1,7 @@
-const browserDetectionTest = require('./detect');
-const { prepareTestData } = require('./utils');
+import BrowserDtector from '../lib/browser-dtector';
 
-const BrowserDtector = require('../dist/lib/browser-dtector');
+import browserDetectionTest from './detect';
+import { prepareTestData } from './utils';
 
 test('it should detect default useragent running in `jest`', () => {
   const browserDtect = new BrowserDtector();

@@ -1,4 +1,4 @@
-const BrowserDtector = require('../dist/lib/browser-dtector');
+import BrowserDtector from '../lib/browser-dtector';
 
 const browserDetectionTest = (
   ua,

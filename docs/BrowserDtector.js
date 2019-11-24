@@ -1,6 +1,6 @@
 import React from 'react';
 
-import BrowserDtector from '../dist/lib/browser-dtector';
+import BrowserDtector from '../lib/browser-dtector';
 
 const BrowserDtectorComponent = () => {
   const browser = new BrowserDtector(window.navigator.userAgent);

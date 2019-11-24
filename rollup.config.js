@@ -1,5 +1,5 @@
-import typescript from 'rollup-plugin-typescript';
 import json from 'rollup-plugin-json';
+import babel from 'rollup-plugin-babel';
 
 import pkg from './package.json';
 
@@ -11,8 +11,9 @@ const banner = `/*!
  * @licence MIT License, https://opensource.org/licenses/MIT
  */
 `;
+
 export default {
-  input: 'lib/browser-dtector.ts',
+  input: 'lib/browser-dtector.js',
   output: {
     name: 'BrowserDtector',
     file: 'dist/lib/browser-dtector.js',
@@ -21,7 +22,7 @@ export default {
     sourcemap: true,
   },
   plugins: [
-    typescript(),
     json(),
+    babel(),
   ],
 };
