@@ -4,8 +4,8 @@ import BrowserDtector from '../lib/browser-dtector';
 
 const BrowserDtectorComponent = () => {
   const browser = new BrowserDtector(window.navigator.userAgent);
-  const userAgent = browser.parseUserAgent();
-  const isKnownBrowser = userAgent.name !== 'Unknown';
+  const parsedUA = browser.parseUserAgent();
+  const isKnownBrowser = parsedUA.name !== 'Unknown' && parsedUA.name !== null;
 
   return (
     <React.Fragment>
@@ -14,9 +14,9 @@ const BrowserDtectorComponent = () => {
           <React.Fragment>
             <p className="text">
               You are viewing this page in -
-              <span className="browser-name">{'{'}{userAgent.name}{'}'}</span>
+              <span className="browser-name">{'{'}{parsedUA.name}{'}'}</span>
             </p>
-            <p className="sub-text">{userAgent.platform}, v{userAgent.version}</p>
+            <p className="sub-text">{parsedUA.platform}, v{parsedUA.version}</p>
           </React.Fragment>
         )}
         {!isKnownBrowser && (

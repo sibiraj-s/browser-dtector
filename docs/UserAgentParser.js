@@ -20,7 +20,7 @@ const uaDisplayTable = [
 
 const UserAgentParserComponent = () => {
   const [parsedUA, setParsedUA] = useState(browser.parseUserAgent());
-  const isKnownBrowser = parsedUA.name !== 'Unknown';
+  const isKnownBrowser = parsedUA.name !== 'Unknown' && parsedUA.name !== null;
 
   function handleChange(event) {
     const ua = event.target.value || '';
