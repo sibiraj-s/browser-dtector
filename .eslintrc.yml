@@ -19,6 +19,8 @@ rules:
   quote-props:
     - error
     - consistent
+  no-await-in-loop: off
+
 env:
   jest: true
   browser: true

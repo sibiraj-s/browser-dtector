@@ -13,8 +13,8 @@
   },
   "scripts": {
     "rollup": "rollup -c",
-    "terser": "terser dist/lib/browser-dtector.js -o dist/lib/browser-dtector.min.js --source-map  --comments \"/\\*!\"",
-    "build:lib": "npm run rollup && npm run terser",
+    "minify": "node scripts/minify.js",
+    "build:lib": "npm run rollup && npm run minify",
     "build:docs": "parcel build docs/index.html --out-dir dist/docs --public-url /browser-dtector/",
     "build": "npm run build:lib && npm run build:docs",
     "postbuild": "sh ./scripts/postbuild.sh",
@@ -53,6 +53,7 @@
     "eslint-plugin-react": "^7.16.0",
     "eslint-plugin-react-hooks": "^1.7.0",
     "gh-pages": "^2.1.1",
+    "glob": "^7.1.6",
     "husky": "^3.1.0",
     "identity-obj-proxy": "^3.0.0",
     "inquirer": "^7.0.0",

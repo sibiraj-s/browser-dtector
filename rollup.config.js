@@ -14,13 +14,25 @@ const banner = `/*!
 
 export default {
   input: 'lib/browser-dtector.js',
-  output: {
-    name: 'BrowserDtector',
-    file: 'dist/lib/browser-dtector.js',
-    format: 'umd',
-    banner,
-    sourcemap: true,
-  },
+  output: [
+    {
+      name: 'BrowserDtector',
+      file: 'dist/lib/browser-dtector.umd.js',
+      format: 'umd',
+      banner,
+      sourcemap: true,
+    }, {
+      file: 'dist/lib/browser-dtector.js',
+      format: 'cjs',
+      banner,
+      sourcemap: true,
+    }, {
+      file: 'dist/lib/browser-dtector.esm.js',
+      format: 'esm',
+      banner,
+      sourcemap: true,
+    },
+  ],
   plugins: [
     json(),
     babel(),

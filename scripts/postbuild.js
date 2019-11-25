@@ -4,7 +4,9 @@ fs.readFile('dist/lib/package.json', 'utf8', (readErr, data) => {
   if (readErr) throw readErr;
 
   const pkg = JSON.parse(data);
-  pkg.main = 'browser-dtector.min.js';
+  pkg.main = 'browser-dtector.js';
+  pkg.module = 'browser-dtector.esm.js';
+  pkg.browser = 'browser-dtector.umd.min.js';
   delete pkg.scripts;
   delete pkg.dependencies;
   delete pkg.devDependencies;
