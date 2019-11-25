@@ -19,13 +19,13 @@ or use cdn
 **Minified:**
 
 ```bash
-//cdn.jsdelivr.net/npm/browser-dtector@latest/browser-dtector.min.js
+//cdn.jsdelivr.net/npm/browser-dtector@latest/browser-dtector.umd.min.js
 ```
 
 **Pretty Printed:**
 
 ```bash
-//cdn.jsdelivr.net/npm/browser-dtector@latest/browser-dtector.js
+//cdn.jsdelivr.net/npm/browser-dtector@latest/browser-dtector.umd.js
 ```
 
 ### Usage
