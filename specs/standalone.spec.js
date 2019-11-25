@@ -2,6 +2,7 @@ import BrowserDtector from '../lib/browser-dtector';
 
 import browserDetectionTest from './detect';
 import { prepareTestData } from './utils';
+import pkgJson from '../package.json';
 
 test('it should detect default useragent running in `jest`', () => {
   const browserDtect = new BrowserDtector();
@@ -57,4 +58,11 @@ test('it should unknown for unknown browsers', () => {
   const browserInfo = browserDtect.parseUserAgent(ua);
 
   expect(browserInfo.name).toBe('Unknown');
+});
+
+test('it should return correct version number', () => {
+  const browserDtect = new BrowserDtector();
+  const version = browserDtect.__VERSION__;
+
+  expect(version).toBe(pkgJson.version);
 });
