@@ -1,4 +1,4 @@
-# browser-dtector [![Build Status](https://travis-ci.com/sibiraj-s/browser-dtector.svg?branch=master)](https://travis-ci.com/sibiraj-s/browser-dtector)
+# browser-dtector [![Tests](https://github.com/sibiraj-s/browser-dtector/workflows/Tests/badge.svg)](https://github.com/sibiraj-s/browser-dtector/actions)
 
 > A Javascript library to detect browser, version and platform
 
