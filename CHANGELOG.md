@@ -3,6 +3,7 @@
 All notable changes to this project will be documented in this file.
 
 > **Tags**
+>
 > - Features
 > - Bug Fixes
 > - Performance Improvements
@@ -12,6 +13,19 @@ All notable changes to this project will be documented in this file.
 > - Documentation
 > - Internal
 > - Unreleased
+
+## v2.0.0 (2019-11-25)
+
+#### Enhancements
+
+- generate multiple output formats ([8d0ec7e](https://github.com/sibiraj-s/browser-dtector/commit/8d0ec7e))
+
+#### Internal
+
+- rewrite library from typescript to javascript ([a3e1bd2](https://github.com/sibiraj-s/browser-dtector/commit/a3e1bd2))
+- update node version to 12 ([f3c6cb8](https://github.com/sibiraj-s/browser-dtector/commit/f3c6cb8))
+- bump devDependencies ([b5d2744](https://github.com/sibiraj-s/browser-dtector/commit/b5d2744))
+- migrate from travis-ci to github actions ([3726d12](https://github.com/sibiraj-s/browser-dtector/commit/3726d12))
 
 ## v1.0.1 (2019-06-23)
 
