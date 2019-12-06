@@ -18,22 +18,20 @@ const ghPagesOptions = {
   message: argv.update ? updateMessage : releaseMessage,
 };
 
-inquirer
-  .prompt([
-    {
-      name: 'publishDocs',
-      type: 'confirm',
-      message: `Do You want to publish the docs to '${chalk.cyan(ghPagesOptions.branch)}' branch?`,
-    },
-  ])
-  .then((answers) => {
-    if (answers.publishDocs) {
-      ghpages.publish('dist/docs', ghPagesOptions, (err) => {
-        if (err) {
-          chalk.red('Unable to publish docs. Error: ', err);
-          return;
-        }
-        console.log(chalk.green(`\nDocumentation published successfully to ${chalk.cyan("'gh-pages'")} \n`));
-      });
-    }
-  });
+inquirer.prompt([
+  {
+    name: 'publishDocs',
+    type: 'confirm',
+    message: `Do You want to publish the docs to '${chalk.cyan(ghPagesOptions.branch)}' branch?`,
+  },
+]).then((answers) => {
+  if (answers.publishDocs) {
+    ghpages.publish('dist/docs', ghPagesOptions, (err) => {
+      if (err) {
+        chalk.red('Unable to publish docs. Error: ', err);
+        return;
+      }
+      console.log(chalk.green(`\nDocumentation published successfully to ${chalk.cyan("'gh-pages'")} \n`));
+    });
+  }
+});
