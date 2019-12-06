@@ -49,7 +49,6 @@
     "gulp-plugin-terser": "^1.0.1",
     "gulp-sourcemaps": "^2.6.5",
     "husky": "^3.1.0",
-    "identity-obj-proxy": "^3.0.0",
     "inquirer": "^7.0.0",
     "jest": "^24.9.0",
     "lint-staged": "^9.5.0",
