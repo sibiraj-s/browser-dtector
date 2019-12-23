@@ -4,7 +4,7 @@ import browserDetectionTest from './detect';
 import { prepareTestData } from './utils';
 import pkgJson from '../package.json';
 
-test('it should detect default useragent running in `jest`', () => {
+it('should detect default useragent running in `jest`', () => {
   const browserDtect = new BrowserDtector();
   const browserInfo = browserDtect.parseUserAgent();
 
@@ -13,7 +13,7 @@ test('it should detect default useragent running in `jest`', () => {
   expect(browserInfo.name).not.toBe('Unknown');
 });
 
-test('it should detect default useragent running in `jest` while invoked via `parseUserAgent`', () => {
+it('should detect default useragent running in `jest` while invoked via `parseUserAgent`', () => {
   const ua = 'Mozilla/5.0 (darwin) AppleWebKit/537.36 (KHTML, like Gecko) jsdom/11.12.0';
   const browserDtect = new BrowserDtector();
   const browserInfo = browserDtect.parseUserAgent(ua);
@@ -23,7 +23,7 @@ test('it should detect default useragent running in `jest` while invoked via `pa
   expect(browserInfo.name).toBe('JsDOM');
 });
 
-test('it should detect `JsDOM` `v71` running in `JsDOM`', () => {
+it('should detect `JsDOM` `v71` running in `JsDOM`', () => {
   const testData = {
     userAgent: 'Mozilla/5.0 (darwin) AppleWebKit/537.36 (KHTML, like Gecko) jsdom/11.12.0',
     browserName: 'JsDOM',
@@ -41,7 +41,7 @@ test('it should detect `JsDOM` `v71` running in `JsDOM`', () => {
   browserDetectionTest(...prepareTestData(testData));
 });
 
-test('it should return null if `invalid useragent` is passed', () => {
+it('should return null if `invalid useragent` is passed', () => {
   const ua = 'I am an invalid useragent';
   const browserDtect = new BrowserDtector(ua);
   const browserInfo = browserDtect.parseUserAgent();
@@ -51,7 +51,7 @@ test('it should return null if `invalid useragent` is passed', () => {
   expect(browserInfo.platform).toBe(null);
 });
 
-test('it should unknown for unknown browsers', () => {
+it('should unknown for unknown browsers', () => {
   const ua = `Mozilla/5.0 (Kali; Intel Kal OS X 10_15_1) AppleWebKit/537.36 (KHTML, like Gecko)
      Godzilla/78.0.3904.108 Gorilla/537.36`;
   const browserDtect = new BrowserDtector();
@@ -60,7 +60,7 @@ test('it should unknown for unknown browsers', () => {
   expect(browserInfo.name).toBe('Unknown');
 });
 
-test('it should return correct version number', () => {
+it('should return correct version number', () => {
   const browserDtect = new BrowserDtector();
   const version = browserDtect.__VERSION__;
 

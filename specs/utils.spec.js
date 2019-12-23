@@ -1,6 +1,6 @@
 import utils from '../lib/utils';
 
-test('it should return fixed value with two decimals', () => {
+it('should return fixed value with two decimals', () => {
   expect(utils.toFixed(1.1111, 2)).toBe('1.11');
   expect(typeof utils.toFixed(1.1111, 2)).toBe('string');
   expect(utils.toFixed(1.100, 2)).toBe('1.1');
