@@ -262,3 +262,41 @@ test('it should detect `Microsoft Edge` `v18` running in `Xbox`', () => {
 
   browserDetectionTest(...prepareTestData(testData));
 });
+
+test('it should detect chromium based edge running in Mac', () => {
+  const testData = {
+    userAgent: `Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_2) AppleWebKit/537.36 (KHTML, like Gecko)
+                Chrome/79.0.3945.88 Safari/537.36 Edg/79.0.309.54`,
+    browserName: 'Microsoft Edge',
+    version: '79.0.309.54',
+    shortVersion: '79',
+    platform: 'Macintosh',
+    isDesktop: true,
+    isWebkit: true,
+    isAndroid: false,
+    isTablet: false,
+    isMobile: false,
+    isIE: false,
+  };
+
+  browserDetectionTest(...prepareTestData(testData));
+});
+
+test('it should detect chromium based edge running in Windows', () => {
+  const testData = {
+    userAgent: `Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko)
+                Chrome/75.0.3763.0 Safari/537.36 Edg/75.0.131.0`,
+    browserName: 'Microsoft Edge',
+    version: '75.0.131.0',
+    shortVersion: '75',
+    platform: 'Windows',
+    isDesktop: true,
+    isWebkit: true,
+    isAndroid: false,
+    isTablet: false,
+    isMobile: false,
+    isIE: false,
+  };
+
+  browserDetectionTest(...prepareTestData(testData));
+});
