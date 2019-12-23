@@ -14,6 +14,16 @@ All notable changes to this project will be documented in this file.
 > - Internal
 > - Unreleased
 
+## v2.1.0 (2019-12-23)
+
+#### Features
+
+- add support for chromium based edge ([fe4477f](https://github.com/sibiraj-s/browser-dtector/commit/fe4477f))
+
+#### Dependency Updates
+
+- bump devDependencies ([9aed8b4](https://github.com/sibiraj-s/browser-dtector/commit/9aed8b4))
+
 ## v2.0.0 (2019-11-25)
 
 #### Enhancements
