@@ -7,7 +7,6 @@ const json = require('rollup-plugin-json');
 const babel = require('rollup-plugin-babel');
 const terser = require('gulp-plugin-terser');
 const sourcemap = require('gulp-sourcemaps');
-const through2 = require('through2');
 const ParcelBundler = require('parcel-bundler');
 
 const pkg = require('./package.json');
@@ -65,43 +64,41 @@ async function compile() {
   });
 }
 
-async function minify() {
-  gulp.src('dist/lib/*.js')
+function minify() {
+  return gulp.src('dist/lib/*.js')
     .pipe(sourcemap.init())
     .pipe(terser())
     .pipe(sourcemap.write('.'))
     .pipe(gulp.dest(libDir));
 }
 
-function updatePackageJSON() {
-  const transform = through2.obj((file, _, callback) => {
-    const modifiedFile = file.clone();
-    const pkgJson = JSON.parse(file.contents.toString());
+async function updatePackageJSON() {
+  const targetPkgJsonPath = path.resolve(libDir, 'package.json');
+  const jsonStr = await fs.promises.readFile(targetPkgJsonPath, 'utf-8');
 
-    pkgJson.main = 'browser-dtector.js';
-    pkgJson.module = 'browser-dtector.esm.js';
-    pkgJson.browser = 'browser-dtector.umd.min.js';
+  const pkgJson = JSON.parse(jsonStr);
 
-    delete pkgJson.scripts;
-    delete pkgJson.dependencies;
-    delete pkgJson.devDependencies;
-    delete pkgJson.private;
-    delete pkgJson.engines;
+  pkgJson.main = 'browser-dtector.js';
+  pkgJson.module = 'browser-dtector.esm.js';
+  pkgJson.browser = 'browser-dtector.umd.min.js';
 
-    modifiedFile.contents = Buffer.from(JSON.stringify((pkgJson), null, 2));
-    callback(null, modifiedFile);
-  });
+  delete pkgJson.scripts;
+  delete pkgJson.dependencies;
+  delete pkgJson.devDependencies;
+  delete pkgJson.private;
+  delete pkgJson.engines;
 
-  return transform;
+
+  await fs.promises.writeFile(targetPkgJsonPath, JSON.stringify((pkgJson), null, 2));
 }
 
-async function copyFiles() {
-  gulp.src('README.md').pipe(gulp.dest(libDir));
-  gulp.src('CHANGELOG.md').pipe(gulp.dest(libDir));
-  gulp.src('LICENSE').pipe(gulp.dest(libDir));
-  gulp.src('package.json')
-    .pipe(updatePackageJSON())
-    .pipe(gulp.dest(libDir));
+function copyFiles() {
+  return gulp.src([
+    'README.md',
+    'CHANGELOG.md',
+    'LICENSE',
+    'package.json',
+  ]).pipe(gulp.dest(libDir));
 }
 
 async function parcel() {
@@ -119,7 +116,7 @@ async function parcel() {
 }
 
 const buildDocs = gulp.series(cleanDocsDir, parcel);
-const build = gulp.series(cleanOutDir, compile, minify, copyFiles, buildDocs);
+const build = gulp.series(cleanOutDir, compile, minify, copyFiles, updatePackageJSON, buildDocs);
 
 exports.build = build;
 exports.buildDocs = buildDocs;
