@@ -3,7 +3,7 @@ const fs = require('fs');
 
 const gulp = require('gulp');
 const rollup = require('rollup');
-const json = require('rollup-plugin-json');
+const json = require('@rollup/plugin-json');
 const babel = require('rollup-plugin-babel');
 const terser = require('gulp-plugin-terser');
 const sourcemap = require('gulp-sourcemaps');
