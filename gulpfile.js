@@ -4,7 +4,7 @@ const fs = require('fs');
 const gulp = require('gulp');
 const rollup = require('rollup');
 const json = require('@rollup/plugin-json');
-const babel = require('rollup-plugin-babel');
+const { babel } = require('@rollup/plugin-babel');
 const terser = require('gulp-plugin-terser');
 const sourcemap = require('gulp-sourcemaps');
 const ParcelBundler = require('parcel-bundler');
@@ -37,7 +37,7 @@ async function compile() {
     input: 'lib/browser-dtector.js',
     plugins: [
       json(),
-      babel(),
+      babel({ babelHelpers: 'bundled' }),
     ],
   });
 
@@ -87,7 +87,6 @@ async function updatePackageJSON() {
   delete pkgJson.devDependencies;
   delete pkgJson.private;
   delete pkgJson.engines;
-
 
   await fs.promises.writeFile(targetPkgJsonPath, JSON.stringify((pkgJson), null, 2));
 }
