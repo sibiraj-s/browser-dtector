@@ -17,8 +17,7 @@
     "test": "jest",
     "lint": "eslint . --ignore-path .gitignore",
     "prepublishOnly": "node ./scripts/prepublish.js",
-    "publish:docs": "gulp buildDocs && node ./scripts/publish-docs.js --release",
-    "update:docs": "gulp buildDocs && node ./scripts/publish-docs.js --update",
+    "publish:docs": "gulp buildDocs && node ./scripts/publish-docs.js",
     "prerelease": "npm run build",
     "release": "sh ./scripts/release.sh"
   },
