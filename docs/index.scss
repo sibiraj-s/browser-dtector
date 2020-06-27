@@ -10,7 +10,7 @@ $crimson: #dc143c;
 
 html,
 body {
-  font-size: 1rem;
+  font-size: 16px;
   font-family: "Inconsolata", monospace;
 }
 
@@ -29,6 +29,15 @@ body {
   margin: 0;
   padding: 0;
   background: url("./assets/project-paper.png");
+}
+
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
 }
 
 .container {
