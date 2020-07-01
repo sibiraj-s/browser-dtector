@@ -1,13 +1,43 @@
 import { KnownBrowsers, KnownPlatforms } from './constants';
-import { version as pkgVersion } from '../package.json';
 import utils from './utils';
 
-function BrowserDtector(inputUA) {
-  this.userAgent = inputUA || window.navigator.userAgent;
-  this.__VERSION__ = pkgVersion;
+import { version as pkgVersion } from '../package.json';
 
-  this.parseUserAgent = (userAgent) => {
-    const browserMatches = {};
+type KnownBrowsersKeys = keyof typeof KnownBrowsers
+type KnownPlatformsKeys = keyof typeof KnownPlatforms
+
+type ValueOf<T> = T[keyof T]
+
+interface BrowserInfo {
+  name: ValueOf<KnownBrowsersKeys> | null;
+  platform: ValueOf<KnownPlatformsKeys> | null;
+  userAgent: string;
+  version: string | null;
+  shortVersion: string | null;
+}
+
+export interface BrowserInfoFull extends BrowserInfo {
+  isAndroid: boolean;
+  isTablet: boolean;
+  isMobile: boolean;
+  isDesktop: boolean;
+  isWebkit: boolean;
+  isIE: boolean;
+}
+
+type BrowserMatches = { [key: string]: boolean }
+
+class BrowserDtector {
+  userAgent: string
+  VERSION: string;
+
+  constructor(inputUA?: string) {
+    this.userAgent = inputUA || window.navigator.userAgent;
+    this.VERSION = pkgVersion;
+  }
+
+  parseUserAgent(userAgent?: string): BrowserInfoFull {
+    const browserMatches: BrowserMatches = {};
 
     const uaFresh = userAgent || this.userAgent;
 
@@ -48,40 +78,30 @@ function BrowserDtector(inputUA) {
       || /(cros)/.exec(ua)
       || [];
 
-    const browserInfo = {
-      name: browserMatch[5] || browserMatch[3] || browserMatch[1] || null,
-      platform: platformMatch[0] || null,
-      userAgent: uaFresh,
-      version: browserMatch[4] || browserMatch[2] || null,
-    };
+    const name = browserMatch[5] || browserMatch[3] || browserMatch[1] || null;
+    const platform = platformMatch[0] || null;
+    const version = browserMatch[4] || browserMatch[2] || null;
 
-    if (browserInfo.name) {
-      browserMatches[browserInfo.name] = true;
-      browserInfo.name = KnownBrowsers[browserInfo.name] || 'Unknown';
+    if (name) {
+      browserMatches[name] = true;
+    }
+    if (platform) {
+      browserMatches[platform] = true;
     }
 
-    if (browserInfo.platform) {
-      browserMatches[browserInfo.platform] = true;
-      browserInfo.platform = KnownPlatforms[browserInfo.platform];
-    }
-
-    if (browserInfo.version) {
-      browserInfo.shortVersion = utils.toFixed(parseFloat(browserInfo.version), 2);
-    }
-
-    browserInfo.isAndroid = !!(
+    const isAndroid = !!(
       browserMatches.tablet
       || browserMatches.android
       || browserMatches.androidTablet
     );
 
-    browserInfo.isTablet = !!(
+    const isTablet = !!(
       browserMatches.ipad
       || browserMatches.tablet
       || browserMatches.androidTablet
     );
 
-    browserInfo.isMobile = !!(
+    const isMobile = !!(
       browserMatches.android
       || browserMatches.androidTablet
       || browserMatches.tablet
@@ -91,14 +111,14 @@ function BrowserDtector(inputUA) {
       || browserMatches['windows phone']
     );
 
-    browserInfo.isDesktop = !!(
+    const isDesktop = !!(
       browserMatches.cros
       || browserMatches.mac
       || browserMatches.linux
       || browserMatches.win
     );
 
-    browserInfo.isWebkit = !!(
+    const isWebkit = !!(
       browserMatches.chrome
       || browserMatches.crios
       || browserMatches.opr
@@ -106,38 +126,39 @@ function BrowserDtector(inputUA) {
       || browserMatches.edg
     );
 
-    browserInfo.isIE = !!(
+    const isIE = !!(
       browserMatches.msie
       || browserMatches.rv
     );
 
-    return browserInfo;
-  };
+    const browserInfo: BrowserInfoFull = {
+      name: KnownBrowsers[name as KnownBrowsersKeys] ?? null,
+      platform: KnownPlatforms[platform as KnownPlatformsKeys] ?? null,
+      userAgent: uaFresh,
+      version,
+      shortVersion: version ? utils.toFixed(parseFloat(version), 2) : null,
+      isAndroid,
+      isTablet,
+      isMobile,
+      isDesktop,
+      isWebkit,
+      isIE
+    };
 
-  this.getBrowserInfo = () => {
+    return browserInfo;
+  }
+
+  getBrowserInfo(): BrowserInfo {
     const browserInfo = this.parseUserAgent();
-    delete browserInfo.isAndroid;
-    delete browserInfo.isMobile;
-    delete browserInfo.isTablet;
-    delete browserInfo.isWebkit;
-    delete browserInfo.isDesktop;
-    delete browserInfo.isIE;
-    return browserInfo;
-  };
 
-  this.getBrowserName = () => this.parseUserAgent().name;
-  this.getBrowserVersion = () => this.parseUserAgent().version;
-  this.getBrowserShortVersion = () => this.parseUserAgent().shortVersion;
-  this.getPlatformName = () => this.parseUserAgent().platform;
-
-  this.isAndroid = () => this.parseUserAgent().isAndroid;
-  this.isTablet = () => this.parseUserAgent().isTablet;
-  this.isMobile = () => this.parseUserAgent().isMobile;
-  this.isWebkit = () => this.parseUserAgent().isWebkit;
-  this.isDesktop = () => this.parseUserAgent().isDesktop;
-  this.isIE = () => this.parseUserAgent().isIE;
-
-  Object.freeze(this);
+    return {
+      name: browserInfo.name,
+      platform: browserInfo.platform,
+      userAgent: browserInfo.userAgent,
+      version: browserInfo.version,
+      shortVersion: browserInfo.shortVersion,
+    };
+  }
 }
 
 export default BrowserDtector;

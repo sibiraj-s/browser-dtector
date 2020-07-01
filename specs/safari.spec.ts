@@ -1,5 +1,4 @@
-const browserDetectionTest = require('./detect');
-const { prepareTestData } = require('./utils');
+import browserDetectionTest from './detect';
 
 it('should detect `Safari` `v12` running in `Macintosh`', () => {
   const testData = {
@@ -17,7 +16,7 @@ it('should detect `Safari` `v12` running in `Macintosh`', () => {
     isIE: false,
   };
 
-  browserDetectionTest(...prepareTestData(testData));
+  browserDetectionTest(testData);
 });
 
 it('should detect `Safari` `v11` running in `IPhone`', () => {
@@ -36,7 +35,7 @@ it('should detect `Safari` `v11` running in `IPhone`', () => {
     isIE: false,
   };
 
-  browserDetectionTest(...prepareTestData(testData));
+  browserDetectionTest(testData);
 });
 
 it('should detect `Safari` `v11` running in `IPad`', () => {
@@ -55,7 +54,7 @@ it('should detect `Safari` `v11` running in `IPad`', () => {
     isIE: false,
   };
 
-  browserDetectionTest(...prepareTestData(testData));
+  browserDetectionTest(testData);
 });
 
 it('should detect `Safari` `v1` running in `Windows`', () => {
@@ -73,5 +72,5 @@ it('should detect `Safari` `v1` running in `Windows`', () => {
     isIE: false,
   };
 
-  browserDetectionTest(...prepareTestData(testData));
+  browserDetectionTest(testData);
 });

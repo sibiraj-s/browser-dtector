@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
 
-import BrowserDtector from '../lib/browser-dtector';
+import BrowserDtector, { BrowserInfoFull } from '../lib/browser-dtector';
 
 const currentUserAgent = window.navigator.userAgent;
 const browser = new BrowserDtector(currentUserAgent);
 
-const uaDisplayTable = [
+interface DisplayTable {
+  name: string;
+  key: keyof BrowserInfoFull
+}
+
+const uaDisplayTable: DisplayTable[] = [
   { name: 'Browser Name', key: 'name' },
   { name: 'Version', key: 'version' },
   { name: 'Short Verison', key: 'shortVersion' },
@@ -18,11 +23,11 @@ const uaDisplayTable = [
   { name: 'isIE', key: 'isIE' },
 ];
 
-const UserAgentParserComponent = () => {
+const UserAgentParserComponent = (): JSX.Element => {
   const [parsedUA, setParsedUA] = useState(browser.parseUserAgent());
-  const isKnownBrowser = parsedUA.name !== 'Unknown' && parsedUA.name !== null;
+  const isKnownBrowser = parsedUA.name !== null;
 
-  function handleChange(event) {
+  function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
     const ua = event.target.value || '';
     setParsedUA(browser.parseUserAgent(ua));
   }
@@ -39,8 +44,8 @@ const UserAgentParserComponent = () => {
               <p className="parsed-results__title">Parsed Results:</p>
               <table>
                 <tbody>
-                  {uaDisplayTable.map(({ key, name }) => (
-                    <tr key={`uaKey__${key}`}><td>{name}</td><td>: {parsedUA[key].toString()}</td></tr>
+                  {uaDisplayTable.map(({ key, name }: DisplayTable) => (
+                    <tr key={`uaKey__${key}`}><td>{name}</td><td>: {parsedUA[key]?.toString()}</td></tr>
                   ))}
                 </tbody>
               </table>

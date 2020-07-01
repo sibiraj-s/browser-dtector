@@ -5,6 +5,7 @@ const gulp = require('gulp');
 const rollup = require('rollup');
 const json = require('@rollup/plugin-json');
 const { babel } = require('@rollup/plugin-babel');
+const { nodeResolve } = require('@rollup/plugin-node-resolve');
 const terser = require('gulp-plugin-terser');
 const sourcemap = require('gulp-sourcemaps');
 const ParcelBundler = require('parcel-bundler');
@@ -14,6 +15,8 @@ const pkg = require('./package.json');
 const outDir = path.resolve(__dirname, 'dist');
 const libDir = path.resolve(outDir, 'lib');
 const docsDir = path.resolve(outDir, 'docs');
+
+const supportedFileExtension = ['.js', '.ts'];
 
 const banner = `/*!
  * @module ${pkg.name}
@@ -34,10 +37,16 @@ async function cleanDocsDir() {
 
 async function compile() {
   const bundle = await rollup.rollup({
-    input: 'lib/browser-dtector.js',
+    input: 'lib/browser-dtector.ts',
     plugins: [
+      nodeResolve({
+        extensions: supportedFileExtension,
+      }),
       json(),
-      babel({ babelHelpers: 'bundled' }),
+      babel({
+        babelHelpers: 'bundled',
+        extensions: supportedFileExtension,
+      }),
     ],
   });
 

@@ -2,10 +2,10 @@ import React from 'react';
 
 import BrowserDtector from '../lib/browser-dtector';
 
-const BrowserDtectorComponent = () => {
+const BrowserDtectorComponent = (): JSX.Element => {
   const browser = new BrowserDtector(window.navigator.userAgent);
   const parsedUA = browser.parseUserAgent();
-  const isKnownBrowser = parsedUA.name !== 'Unknown' && parsedUA.name !== null;
+  const isKnownBrowser = parsedUA.name !== null;
 
   return (
     <React.Fragment>
@@ -23,7 +23,7 @@ const BrowserDtectorComponent = () => {
           <p className="text"><span className="browser-name">{'{ Unknown Browser }'}</span></p>
         )}
       </div>
-      <footer className="footer">BrowserDtector: v{browser.__VERSION__}</footer>
+      <footer className="footer">BrowserDtector: v{browser.VERSION}</footer>
     </React.Fragment>
   );
 };

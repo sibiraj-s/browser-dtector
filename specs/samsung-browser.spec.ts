@@ -1,5 +1,4 @@
-const browserDetectionTest = require('./detect');
-const { prepareTestData } = require('./utils');
+import browserDetectionTest from './detect';
 
 it('should detect `Samsung Browser` `v2.1` running in `Android`', () => {
   const testData = {
@@ -17,7 +16,7 @@ it('should detect `Samsung Browser` `v2.1` running in `Android`', () => {
     isIE: false,
   };
 
-  browserDetectionTest(...prepareTestData(testData));
+  browserDetectionTest(testData);
 });
 
 it('should detect `Samsung Browser` `v7.4` running in `Android Tablet`', () => {
@@ -36,5 +35,5 @@ it('should detect `Samsung Browser` `v7.4` running in `Android Tablet`', () => {
     isIE: false,
   };
 
-  browserDetectionTest(...prepareTestData(testData));
+  browserDetectionTest(testData);
 });

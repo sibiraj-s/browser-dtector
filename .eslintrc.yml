@@ -1,27 +1,32 @@
 root: true
-extends: airbnb
+
 rules:
-  class-methods-use-this: off
-  no-underscore-dangle: off
-  react/jsx-filename-extension: off
-  react/jsx-one-expression-per-line: off
-  import/no-extraneous-dependencies: off
-  no-console: off
-  react/prefer-stateless-function:
-    - error
-    - ignorePureComponents: true
-  react/no-multi-comp: off
-  react/jsx-fragments:
-    - error
-    - element
+  semi: error
   max-len:
     - error
     - code: 120
-  quote-props:
-    - error
-    - consistent
-  no-await-in-loop: off
 
-env:
-  jest: true
-  browser: true
+overrides:
+  - files: ['*.ts', '*.tsx']
+    parser: '@typescript-eslint/parser'
+    plugins:
+      - '@typescript-eslint'
+    extends:
+      - 'eslint:recommended'
+      - 'plugin:@typescript-eslint/recommended'
+      - 'plugin:react/recommended'
+      - 'plugin:react-hooks/recommended'
+    env:
+      browser: true
+      jest: true
+
+  - files: '*.js'
+    extends: 'airbnb-base'
+    rules:
+      max-len:
+        - error
+        - code: 120
+      no-console: off
+      import/no-extraneous-dependencies: off
+    env:
+      node: true

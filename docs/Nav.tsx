@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
-const Nav = () => {
+const Nav = (): JSX.Element => {
   const location = useLocation();
 
   const goToPath = useMemo(() => {

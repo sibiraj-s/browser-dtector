@@ -1,5 +1,4 @@
-const browserDetectionTest = require('./detect');
-const { prepareTestData } = require('./utils');
+import browserDetectionTest from './detect';
 
 it('should detect `Google Chrome` `v71` running in `Macintosh`', () => {
   const testData = {
@@ -17,7 +16,7 @@ it('should detect `Google Chrome` `v71` running in `Macintosh`', () => {
     isIE: false,
   };
 
-  browserDetectionTest(...prepareTestData(testData));
+  browserDetectionTest(testData);
 });
 
 it('should detect `Google Chrome` `v60` running in `Windows`', () => {
@@ -36,7 +35,7 @@ it('should detect `Google Chrome` `v60` running in `Windows`', () => {
     isIE: false,
   };
 
-  browserDetectionTest(...prepareTestData(testData));
+  browserDetectionTest(testData);
 });
 
 it('should detect `Google Chrome` `v56` running in `Linux`', () => {
@@ -55,7 +54,7 @@ it('should detect `Google Chrome` `v56` running in `Linux`', () => {
     isIE: false,
   };
 
-  browserDetectionTest(...prepareTestData(testData));
+  browserDetectionTest(testData);
 });
 
 it('should detect `Google Chrome` `v70` running in `Chrome OS`', () => {
@@ -74,7 +73,7 @@ it('should detect `Google Chrome` `v70` running in `Chrome OS`', () => {
     isIE: false,
   };
 
-  browserDetectionTest(...prepareTestData(testData));
+  browserDetectionTest(testData);
 });
 
 it('should detect `Google Chrome` `v60` running in `IPad`', () => {
@@ -93,7 +92,7 @@ it('should detect `Google Chrome` `v60` running in `IPad`', () => {
     isIE: false,
   };
 
-  browserDetectionTest(...prepareTestData(testData));
+  browserDetectionTest(testData);
 });
 
 it('should detect `Google Chrome` `v56` running in `IPhone`', () => {
@@ -112,7 +111,7 @@ it('should detect `Google Chrome` `v56` running in `IPhone`', () => {
     isIE: false,
   };
 
-  browserDetectionTest(...prepareTestData(testData));
+  browserDetectionTest(testData);
 });
 
 it('should detect `Google Chrome` `v18` running in `Android`', () => {
@@ -131,7 +130,7 @@ it('should detect `Google Chrome` `v18` running in `Android`', () => {
     isIE: false,
   };
 
-  browserDetectionTest(...prepareTestData(testData));
+  browserDetectionTest(testData);
 });
 
 it('should detect `Google Chrome` `v58` running in `Android Tablet`', () => {
@@ -150,5 +149,5 @@ it('should detect `Google Chrome` `v58` running in `Android Tablet`', () => {
     isIE: false,
   };
 
-  browserDetectionTest(...prepareTestData(testData));
+  browserDetectionTest(testData);
 });
