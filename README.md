@@ -153,10 +153,11 @@ browser.parseUserAgent();
   }
   ```
 
+- **userAgent** [`string`]: Useragent for current instance
+
 **Miscellaneous:**
 
-- **userAgent** [`string`]: Useragent for current instance
-- **VERSION** [`string`]: Current version of the library.
+- **BrowserDtector.VERSION** [`string`]: Current version of the library.
 
 [npm]: https://www.npmjs.com/
 [yarn]: https://yarnpkg.com/lang/en/

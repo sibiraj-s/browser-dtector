@@ -7,11 +7,13 @@ import { BrowserInfoFull, BrowserMatches, KnownBrowsersKeys, KnownPlatformsKeys,
 
 class BrowserDtector {
   userAgent: string
-  VERSION: string;
 
   constructor(inputUA?: string) {
     this.userAgent = inputUA || window.navigator.userAgent;
-    this.VERSION = pkgVersion;
+  }
+
+  static get VERSION () {
+    return pkgVersion;
   }
 
   parseUserAgent(userAgent?: string): BrowserInfoFull {

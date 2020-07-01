@@ -60,8 +60,7 @@ it('should null for unknown browsers', () => {
 });
 
 it('should return correct version number', () => {
-  const browserDtect = new BrowserDtector();
-  const version = browserDtect.VERSION;
+  const version = BrowserDtector.VERSION;
 
   expect(version).toBe(pkgJson.version);
 });

@@ -23,7 +23,7 @@ const BrowserDtectorComponent = (): JSX.Element => {
           <p className="text"><span className="browser-name">{'{ Unknown Browser }'}</span></p>
         )}
       </div>
-      <footer className="footer">BrowserDtector: v{browser.VERSION}</footer>
+      <footer className="footer">BrowserDtector: v{BrowserDtector.VERSION}</footer>
     </React.Fragment>
   );
 };
