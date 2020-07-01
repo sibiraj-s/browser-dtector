@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
-import BrowserDtector, { BrowserInfoFull } from '../lib/browser-dtector';
+import BrowserDtector from '../lib/browser-dtector';
+import { BrowserInfoFull } from '../lib/types';
 
 const currentUserAgent = window.navigator.userAgent;
 const browser = new BrowserDtector(currentUserAgent);

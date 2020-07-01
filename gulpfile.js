@@ -90,6 +90,7 @@ async function updatePackageJSON() {
   pkgJson.main = 'browser-dtector.js';
   pkgJson.module = 'browser-dtector.esm.js';
   pkgJson.browser = 'browser-dtector.umd.min.js';
+  pkgJson.types = 'types.d.ts';
 
   delete pkgJson.scripts;
   delete pkgJson.dependencies;
@@ -106,6 +107,7 @@ function copyFiles() {
     'CHANGELOG.md',
     'LICENSE',
     'package.json',
+    'lib/types.d.ts',
   ]).pipe(gulp.dest(libDir));
 }
 

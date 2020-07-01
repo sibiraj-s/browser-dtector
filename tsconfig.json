@@ -1,12 +1,11 @@
 {
   "compilerOptions": {
-    "target": "esnext",                         
-    "jsx": "react",                           
-    "noEmit": true,                           
-    "strict": true,                           
-    "moduleResolution": "node",               
-    "esModuleInterop": true,                  
-    "skipLibCheck": true,                     
+    "target": "esnext",
+    "jsx": "react",
+    "noEmit": true,
+    "strict": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true
   }

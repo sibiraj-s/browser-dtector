@@ -3,29 +3,7 @@ import utils from './utils';
 
 import { version as pkgVersion } from '../package.json';
 
-type KnownBrowsersKeys = keyof typeof KnownBrowsers
-type KnownPlatformsKeys = keyof typeof KnownPlatforms
-
-type ValueOf<T> = T[keyof T]
-
-interface BrowserInfo {
-  name: ValueOf<KnownBrowsersKeys> | null;
-  platform: ValueOf<KnownPlatformsKeys> | null;
-  userAgent: string;
-  version: string | null;
-  shortVersion: string | null;
-}
-
-export interface BrowserInfoFull extends BrowserInfo {
-  isAndroid: boolean;
-  isTablet: boolean;
-  isMobile: boolean;
-  isDesktop: boolean;
-  isWebkit: boolean;
-  isIE: boolean;
-}
-
-type BrowserMatches = { [key: string]: boolean }
+import { BrowserInfoFull, BrowserMatches, KnownBrowsersKeys, KnownPlatformsKeys, BrowserInfo } from './types';
 
 class BrowserDtector {
   userAgent: string
