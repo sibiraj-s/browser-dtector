@@ -14,6 +14,21 @@ All notable changes to this project will be documented in this file.
 > - Internal
 > - Unreleased
 
+## v3.0.0 (2020-07-01)
+
+#### Features
+
+- add typings ([2974892](https://github.com/sibiraj-s/browser-dtector/commit/2974892))
+
+#### Breaking Changes
+
+- removed methods `getBrowserName`, `getBrowserVersion`, `getBrowserShortVersion` and `getPlatformName` ([3d686cc](https://github.com/sibiraj-s/browser-dtector/commit/3d686cc))
+- removed `__VERSION__` property ([3d686cc](https://github.com/sibiraj-s/browser-dtector/commit/3d686cc))
+
+#### Internal
+
+- rewrite the project in typescript ([3d686cc](https://github.com/sibiraj-s/browser-dtector/commit/3d686cc))
+
 ## v2.1.0 (2019-12-23)
 
 #### Features
