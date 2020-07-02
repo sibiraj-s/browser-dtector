@@ -1,4 +1,4 @@
-import assert from './assert/dom';
+import assert from './assert';
 
 it('should detect `Opera` `v35` running in `Android`', () => {
   const testData = {

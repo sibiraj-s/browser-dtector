@@ -1,11 +1,11 @@
 /**
  * @jest-environment node
  */
-import assert, { assertPasreUserAgent } from './assert/dom';
+import assert, { assertPasreUserAgent } from './assert';
 
 it('should work in node environmnet', () => {
   const testData = {
-    userAgent: '',
+    userAgent: null,
     browserName: null,
     version: null,
     shortVersion: null,
@@ -23,7 +23,7 @@ it('should work in node environmnet', () => {
 
 it('should work correctly with no userAgent', () => {
   const testData = {
-    userAgent: '',
+    userAgent: null,
     browserName: null,
     version: null,
     shortVersion: null,

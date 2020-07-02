@@ -1,4 +1,4 @@
-import assert from './assert/dom';
+import assert from './assert';
 
 it('should detect `Google Chrome` `v71` running in `Macintosh`', () => {
   const testData = {

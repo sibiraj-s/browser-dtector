@@ -1,6 +1,6 @@
 import BrowserDtector from '../lib/browser-dtector';
 
-import assert from './assert/dom';
+import assert from './assert';
 import pkgJson from '../package.json';
 
 it('should detect default useragent running in `jest`', () => {

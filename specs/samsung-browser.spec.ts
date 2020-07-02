@@ -1,4 +1,4 @@
-import assert from './assert/dom';
+import assert from './assert';
 
 it('should detect `Samsung Browser` `v2.1` running in `Android`', () => {
   const testData = {

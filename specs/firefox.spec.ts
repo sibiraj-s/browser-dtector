@@ -1,4 +1,4 @@
-import assert from './assert/dom';
+import assert from './assert';
 
 // user agents string reference: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent/Firefox
 

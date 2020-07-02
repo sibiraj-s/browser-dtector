@@ -6,10 +6,10 @@ import { version as pkgVersion } from '../package.json';
 import { BrowserInfoFull, BrowserMatches, KnownBrowsersKeys, KnownPlatformsKeys, BrowserInfo } from './types';
 
 class BrowserDtector {
-  userAgent: string
+  userAgent: string | null
 
   constructor(inputUA?: string) {
-    this.userAgent = inputUA || (typeof window !== 'undefined' ? window.navigator.userAgent : '');
+    this.userAgent = inputUA || (typeof window !== 'undefined' ? window.navigator.userAgent : null);
   }
 
   static get VERSION() {
@@ -19,7 +19,7 @@ class BrowserDtector {
   parseUserAgent(userAgent?: string): BrowserInfoFull {
     const browserMatches: BrowserMatches = {};
 
-    const uaFresh = userAgent || this.userAgent;
+    const uaFresh = userAgent || this.userAgent || '';
 
     // convert to lower case and treat tabs and multiple sapces as single space
     const ua = uaFresh.toLowerCase().replace(/\s\s+/g, ' ');

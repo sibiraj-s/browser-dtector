@@ -1,4 +1,4 @@
-import assert from './assert/dom';
+import assert from './assert';
 
 it('should detect `Safari` `v12` running in `Macintosh`', () => {
   const testData = {

@@ -153,7 +153,7 @@ browser.parseUserAgent();
   }
   ```
 
-- **userAgent** [`string`]: Useragent for current instance
+- **userAgent** [`string | null`]: Useragent for current instance
 
 **Miscellaneous:**
 

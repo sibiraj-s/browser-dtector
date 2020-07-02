@@ -1,7 +1,7 @@
 import BrowserDtector from '../../lib/browser-dtector';
 
 export interface TestData {
-  userAgent: string;
+  userAgent: string | null;
   browserName: string | null,
   version: string | null,
   shortVersion: string | null,
@@ -29,7 +29,7 @@ const assert = (testData: TestData): void => {
     isIE
   } = testData;
 
-  const browserDtect = new BrowserDtector(userAgent);
+  const browserDtect = new BrowserDtector(userAgent ?? '');
   const browserInfo = browserDtect.parseUserAgent();
 
   expect(browserDtect.userAgent).toBe(userAgent);
@@ -65,9 +65,9 @@ export const assertPasreUserAgent = (testData: TestData) => {
   } = testData;
 
   const browserDtect = new BrowserDtector();
-  const browserInfo = browserDtect.parseUserAgent(userAgent);
+  const browserInfo = browserDtect.parseUserAgent(userAgent ?? '');
 
-  expect(browserDtect.userAgent).toBe('');
+  expect(browserDtect.userAgent).toBeNull();
 
   expect(browserInfo.name).toBe(browserName);
   expect(browserInfo.version).toBe(version);

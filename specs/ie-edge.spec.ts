@@ -1,4 +1,4 @@
-import assert from './assert/dom';
+import assert from './assert';
 
 it('should detect `Microsoft Internet Explorer` `v7` running in `Windows`', () => {
   const testData = {
