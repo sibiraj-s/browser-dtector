@@ -1,4 +1,4 @@
-import browserDetectionTest from './detect';
+import assert from './assert/dom';
 
 // user agents string reference: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent/Firefox
 
@@ -17,7 +17,7 @@ it('should detect `Mozilla Firefox` `v10` running in `Mac OS X on Intel x86 or x
     isIE: false,
   };
 
-  browserDetectionTest(testData);
+  assert(testData);
 });
 
 it('should detect `Mozilla Firefox` `v10` running in `Mac OS X on PowerPC`', () => {
@@ -35,7 +35,7 @@ it('should detect `Mozilla Firefox` `v10` running in `Mac OS X on PowerPC`', () 
     isIE: false,
   };
 
-  browserDetectionTest(testData);
+  assert(testData);
 });
 
 
@@ -54,7 +54,7 @@ it('should detect `Mozilla Firefox` `v10` running in `Linux desktop, i686`', () 
     isIE: false,
   };
 
-  browserDetectionTest(testData);
+  assert(testData);
 });
 
 it('should detect `Mozilla Firefox` `v10` running in `Linux desktop, x86_64`', () => {
@@ -72,7 +72,7 @@ it('should detect `Mozilla Firefox` `v10` running in `Linux desktop, x86_64`', (
     isIE: false,
   };
 
-  browserDetectionTest(testData);
+  assert(testData);
 });
 
 it('should detect `Mozilla Firefox` `v10` running in `Nokia N900 Linux mobile, on the Fennec browser`', () => {
@@ -90,7 +90,7 @@ it('should detect `Mozilla Firefox` `v10` running in `Nokia N900 Linux mobile, o
     isIE: false,
   };
 
-  browserDetectionTest(testData);
+  assert(testData);
 });
 
 it('should detect `Mozilla Firefox` `v10` running in `Linux desktop, i686 running on x86_64`', () => {
@@ -108,7 +108,7 @@ it('should detect `Mozilla Firefox` `v10` running in `Linux desktop, i686 runnin
     isIE: false,
   };
 
-  browserDetectionTest(testData);
+  assert(testData);
 });
 
 it('should detect `Mozilla Firefox` `v10` running in `Windows NT on x86`', () => {
@@ -126,7 +126,7 @@ it('should detect `Mozilla Firefox` `v10` running in `Windows NT on x86`', () =>
     isIE: false,
   };
 
-  browserDetectionTest(testData);
+  assert(testData);
 });
 
 it('should detect `Mozilla Firefox` `v10` running in `Windows NT, WOW64`', () => {
@@ -144,7 +144,7 @@ it('should detect `Mozilla Firefox` `v10` running in `Windows NT, WOW64`', () =>
     isIE: false,
   };
 
-  browserDetectionTest(testData);
+  assert(testData);
 });
 
 it('should detect `Mozilla Firefox` `v40` running in `Android Phone <=40`', () => {
@@ -162,7 +162,7 @@ it('should detect `Mozilla Firefox` `v40` running in `Android Phone <=40`', () =
     isIE: false,
   };
 
-  browserDetectionTest(testData);
+  assert(testData);
 });
 
 it('should detect `Mozilla Firefox` `v40` running in `Android Tablet <=40`', () => {
@@ -180,7 +180,7 @@ it('should detect `Mozilla Firefox` `v40` running in `Android Tablet <=40`', () 
     isIE: false,
   };
 
-  browserDetectionTest(testData);
+  assert(testData);
 });
 
 it('should detect `Mozilla Firefox` `v41` running in `Android Phone <=41`', () => {
@@ -198,7 +198,7 @@ it('should detect `Mozilla Firefox` `v41` running in `Android Phone <=41`', () =
     isIE: false,
   };
 
-  browserDetectionTest(testData);
+  assert(testData);
 });
 
 it('should detect `Mozilla Firefox` `v41` running in `Android Tablet <=41`', () => {
@@ -216,5 +216,5 @@ it('should detect `Mozilla Firefox` `v41` running in `Android Tablet <=41`', () 
     isIE: false,
   };
 
-  browserDetectionTest(testData);
+  assert(testData);
 });

@@ -1,4 +1,4 @@
-import browserDetectionTest from './detect';
+import assert from './assert/dom';
 
 it('should detect `Google Chrome` `v71` running in `Macintosh`', () => {
   const testData = {
@@ -16,7 +16,7 @@ it('should detect `Google Chrome` `v71` running in `Macintosh`', () => {
     isIE: false,
   };
 
-  browserDetectionTest(testData);
+  assert(testData);
 });
 
 it('should detect `Google Chrome` `v60` running in `Windows`', () => {
@@ -35,7 +35,7 @@ it('should detect `Google Chrome` `v60` running in `Windows`', () => {
     isIE: false,
   };
 
-  browserDetectionTest(testData);
+  assert(testData);
 });
 
 it('should detect `Google Chrome` `v56` running in `Linux`', () => {
@@ -54,7 +54,7 @@ it('should detect `Google Chrome` `v56` running in `Linux`', () => {
     isIE: false,
   };
 
-  browserDetectionTest(testData);
+  assert(testData);
 });
 
 it('should detect `Google Chrome` `v70` running in `Chrome OS`', () => {
@@ -73,7 +73,7 @@ it('should detect `Google Chrome` `v70` running in `Chrome OS`', () => {
     isIE: false,
   };
 
-  browserDetectionTest(testData);
+  assert(testData);
 });
 
 it('should detect `Google Chrome` `v60` running in `IPad`', () => {
@@ -92,7 +92,7 @@ it('should detect `Google Chrome` `v60` running in `IPad`', () => {
     isIE: false,
   };
 
-  browserDetectionTest(testData);
+  assert(testData);
 });
 
 it('should detect `Google Chrome` `v56` running in `IPhone`', () => {
@@ -111,7 +111,7 @@ it('should detect `Google Chrome` `v56` running in `IPhone`', () => {
     isIE: false,
   };
 
-  browserDetectionTest(testData);
+  assert(testData);
 });
 
 it('should detect `Google Chrome` `v18` running in `Android`', () => {
@@ -130,7 +130,7 @@ it('should detect `Google Chrome` `v18` running in `Android`', () => {
     isIE: false,
   };
 
-  browserDetectionTest(testData);
+  assert(testData);
 });
 
 it('should detect `Google Chrome` `v58` running in `Android Tablet`', () => {
@@ -149,5 +149,5 @@ it('should detect `Google Chrome` `v58` running in `Android Tablet`', () => {
     isIE: false,
   };
 
-  browserDetectionTest(testData);
+  assert(testData);
 });

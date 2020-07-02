@@ -1,6 +1,6 @@
 import BrowserDtector from '../lib/browser-dtector';
 
-import browserDetectionTest from './detect';
+import assert from './assert/dom';
 import pkgJson from '../package.json';
 
 it('should detect default useragent running in `jest`', () => {
@@ -37,7 +37,7 @@ it('should detect `JsDOM` `v71` running in `JsDOM`', () => {
     isIE: false,
   };
 
-  browserDetectionTest(testData);
+  assert(testData);
 });
 
 it('should return null if `invalid useragent` is passed', () => {

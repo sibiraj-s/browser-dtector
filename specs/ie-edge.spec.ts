@@ -1,4 +1,4 @@
-import browserDetectionTest from './detect';
+import assert from './assert/dom';
 
 it('should detect `Microsoft Internet Explorer` `v7` running in `Windows`', () => {
   const testData = {
@@ -16,7 +16,7 @@ it('should detect `Microsoft Internet Explorer` `v7` running in `Windows`', () =
     isIE: true,
   };
 
-  browserDetectionTest(testData);
+  assert(testData);
 });
 
 it('should detect `Microsoft Internet Explorer` `v8` running in `Windows`', () => {
@@ -34,7 +34,7 @@ it('should detect `Microsoft Internet Explorer` `v8` running in `Windows`', () =
     isIE: true,
   };
 
-  browserDetectionTest(testData);
+  assert(testData);
 });
 
 it('should detect `Microsoft Internet Explorer` `v9` running in `Windows`', () => {
@@ -52,7 +52,7 @@ it('should detect `Microsoft Internet Explorer` `v9` running in `Windows`', () =
     isIE: true,
   };
 
-  browserDetectionTest(testData);
+  assert(testData);
 });
 
 it('should detect `Microsoft Internet Explorer` `v10` running in `Windows`', () => {
@@ -70,7 +70,7 @@ it('should detect `Microsoft Internet Explorer` `v10` running in `Windows`', () 
     isIE: true,
   };
 
-  browserDetectionTest(testData);
+  assert(testData);
 });
 
 it('should detect `Microsoft Internet Explorer` `v11` running in `Windows`', () => {
@@ -88,7 +88,7 @@ it('should detect `Microsoft Internet Explorer` `v11` running in `Windows`', () 
     isIE: true,
   };
 
-  browserDetectionTest(testData);
+  assert(testData);
 });
 
 it('should detect `Microsoft Edge` `v14` running in `Windows`', () => {
@@ -107,7 +107,7 @@ it('should detect `Microsoft Edge` `v14` running in `Windows`', () => {
     isIE: false,
   };
 
-  browserDetectionTest(testData);
+  assert(testData);
 });
 
 it('should detect `Microsoft Edge` `v15` running in `Windows Phone`', () => {
@@ -126,7 +126,7 @@ it('should detect `Microsoft Edge` `v15` running in `Windows Phone`', () => {
     isIE: false,
   };
 
-  browserDetectionTest(testData);
+  assert(testData);
 });
 
 it('should detect `Microsoft Edge` `v16` running in `Windows Phone`', () => {
@@ -145,7 +145,7 @@ it('should detect `Microsoft Edge` `v16` running in `Windows Phone`', () => {
     isIE: false,
   };
 
-  browserDetectionTest(testData);
+  assert(testData);
 });
 
 it('should detect `Microsoft Edge` `v14` running in `Windows Phone`', () => {
@@ -164,7 +164,7 @@ it('should detect `Microsoft Edge` `v14` running in `Windows Phone`', () => {
     isIE: false,
   };
 
-  browserDetectionTest(testData);
+  assert(testData);
 });
 
 it('should detect `Microsoft Edge` `v15` running in `Windows`', () => {
@@ -183,7 +183,7 @@ it('should detect `Microsoft Edge` `v15` running in `Windows`', () => {
     isIE: false,
   };
 
-  browserDetectionTest(testData);
+  assert(testData);
 });
 
 it('should detect `Microsoft Edge` `v16` running in `Windows`', () => {
@@ -202,7 +202,7 @@ it('should detect `Microsoft Edge` `v16` running in `Windows`', () => {
     isIE: false,
   };
 
-  browserDetectionTest(testData);
+  assert(testData);
 });
 
 it('should detect `Microsoft Edge` `v17` running in `Windows`', () => {
@@ -221,7 +221,7 @@ it('should detect `Microsoft Edge` `v17` running in `Windows`', () => {
     isIE: false,
   };
 
-  browserDetectionTest(testData);
+  assert(testData);
 });
 
 it('should detect `Microsoft Edge` `v18` running in `Windows`', () => {
@@ -240,7 +240,7 @@ it('should detect `Microsoft Edge` `v18` running in `Windows`', () => {
     isIE: false,
   };
 
-  browserDetectionTest(testData);
+  assert(testData);
 });
 
 it('should detect `Microsoft Edge` `v18` running in `Xbox`', () => {
@@ -259,7 +259,7 @@ it('should detect `Microsoft Edge` `v18` running in `Xbox`', () => {
     isIE: false,
   };
 
-  browserDetectionTest(testData);
+  assert(testData);
 });
 
 it('should detect chromium based edge running in Mac', () => {
@@ -278,7 +278,7 @@ it('should detect chromium based edge running in Mac', () => {
     isIE: false,
   };
 
-  browserDetectionTest(testData);
+  assert(testData);
 });
 
 it('should detect chromium based edge running in Windows', () => {
@@ -297,5 +297,5 @@ it('should detect chromium based edge running in Windows', () => {
     isIE: false,
   };
 
-  browserDetectionTest(testData);
+  assert(testData);
 });

@@ -1,4 +1,4 @@
-import browserDetectionTest from './detect';
+import assert from './assert/dom';
 
 it('should detect `Opera` `v35` running in `Android`', () => {
   const testData = {
@@ -16,7 +16,7 @@ it('should detect `Opera` `v35` running in `Android`', () => {
     isIE: false,
   };
 
-  browserDetectionTest(testData);
+  assert(testData);
 });
 
 it('should detect `Opera` `v12` running in `Android Tablet`', () => {
@@ -34,7 +34,7 @@ it('should detect `Opera` `v12` running in `Android Tablet`', () => {
     isIE: false,
   };
 
-  browserDetectionTest(testData);
+  assert(testData);
 });
 
 
@@ -53,7 +53,7 @@ it('should detect `Opera` `v11` running in `IPad`', () => {
     isIE: false,
   };
 
-  browserDetectionTest(testData);
+  assert(testData);
 });
 
 it('should detect `Opera` `v14` running in `IPhone`', () => {
@@ -72,7 +72,7 @@ it('should detect `Opera` `v14` running in `IPhone`', () => {
     isIE: false,
   };
 
-  browserDetectionTest(testData);
+  assert(testData);
 });
 
 it('should detect `Opera` `v48` running in `Macintosh`', () => {
@@ -91,7 +91,7 @@ it('should detect `Opera` `v48` running in `Macintosh`', () => {
     isIE: false,
   };
 
-  browserDetectionTest(testData);
+  assert(testData);
 });
 
 it('should detect `Opera` `v38` running in `Linux`', () => {
@@ -110,7 +110,7 @@ it('should detect `Opera` `v38` running in `Linux`', () => {
     isIE: false,
   };
 
-  browserDetectionTest(testData);
+  assert(testData);
 });
 
 it('should detect `Opera` `v12` running in `Windows`', () => {
@@ -128,7 +128,7 @@ it('should detect `Opera` `v12` running in `Windows`', () => {
     isIE: false,
   };
 
-  browserDetectionTest(testData);
+  assert(testData);
 });
 
 it('should detect `Opera` `v43` running in `Windows`', () => {
@@ -147,5 +147,5 @@ it('should detect `Opera` `v43` running in `Windows`', () => {
     isIE: false,
   };
 
-  browserDetectionTest(testData);
+  assert(testData);
 });

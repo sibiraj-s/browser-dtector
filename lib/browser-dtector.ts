@@ -9,10 +9,10 @@ class BrowserDtector {
   userAgent: string
 
   constructor(inputUA?: string) {
-    this.userAgent = inputUA || window.navigator.userAgent;
+    this.userAgent = inputUA || (typeof window !== 'undefined' ? window.navigator.userAgent : '');
   }
 
-  static get VERSION () {
+  static get VERSION() {
     return pkgVersion;
   }
 

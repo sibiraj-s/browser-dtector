@@ -6,4 +6,14 @@ it('should return fixed value with two decimals', () => {
   expect(utils.toFixed(1.100, 2)).toBe('1.1');
   expect(utils.toFixed(1.00, 2)).toBe('1');
   expect(utils.toFixed(1.000)).toBe('1');
+  expect(utils.toFixed(0)).toBe('0');
+  expect(utils.toFixed(0.00000, 2)).toBe('0');
+
+  expect(utils.toFixed('1')).toBe('1');
+  expect(utils.toFixed('1.100', 2)).toBe('1.1');
+  expect(utils.toFixed('1.00', 2)).toBe('1');
+  expect(utils.toFixed('1.000', 2)).toBe('1');
+  expect(utils.toFixed('undefined')).toBe(null);
+  expect(utils.toFixed('')).toBe('0');
+  expect(utils.toFixed('0')).toBe('0');
 });

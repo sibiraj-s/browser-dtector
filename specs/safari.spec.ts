@@ -1,4 +1,4 @@
-import browserDetectionTest from './detect';
+import assert from './assert/dom';
 
 it('should detect `Safari` `v12` running in `Macintosh`', () => {
   const testData = {
@@ -16,7 +16,7 @@ it('should detect `Safari` `v12` running in `Macintosh`', () => {
     isIE: false,
   };
 
-  browserDetectionTest(testData);
+  assert(testData);
 });
 
 it('should detect `Safari` `v11` running in `IPhone`', () => {
@@ -35,7 +35,7 @@ it('should detect `Safari` `v11` running in `IPhone`', () => {
     isIE: false,
   };
 
-  browserDetectionTest(testData);
+  assert(testData);
 });
 
 it('should detect `Safari` `v11` running in `IPad`', () => {
@@ -54,7 +54,7 @@ it('should detect `Safari` `v11` running in `IPad`', () => {
     isIE: false,
   };
 
-  browserDetectionTest(testData);
+  assert(testData);
 });
 
 it('should detect `Safari` `v1` running in `Windows`', () => {
@@ -72,5 +72,5 @@ it('should detect `Safari` `v1` running in `Windows`', () => {
     isIE: false,
   };
 
-  browserDetectionTest(testData);
+  assert(testData);
 });
