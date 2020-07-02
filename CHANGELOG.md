@@ -14,6 +14,13 @@ All notable changes to this project will be documented in this file.
 > - Internal
 > - Unreleased
 
+## v3.0.1 (2020-07-02)
+
+#### Bug Fixes
+
+- set correct UA defaults ([1dc9bbb](https://github.com/sibiraj-s/browser-dtector/commit/1dc9bbb))
+- handle crash in nodejs environment ([36c77bf](https://github.com/sibiraj-s/browser-dtector/commit/36c77bf))
+
 ## v3.0.0 (2020-07-01)
 
 #### Features
