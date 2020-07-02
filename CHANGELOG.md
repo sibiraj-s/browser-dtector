@@ -14,6 +14,12 @@ All notable changes to this project will be documented in this file.
 > - Internal
 > - Unreleased
 
+## v3.0.2 (2020-07-02)
+
+#### Internal
+
+- update LICENSE ([cb66a2a](https://github.com/sibiraj-s/browser-dtector/commit/cb66a2a))
+
 ## v3.0.1 (2020-07-02)
 
 #### Bug Fixes
