@@ -14,6 +14,12 @@ All notable changes to this project will be documented in this file.
 > - Internal
 > - Unreleased
 
+## v3.1.0 (2020-07-04)
+
+#### Features
+
+- detect brave browser ([069d6ae](https://github.com/sibiraj-s/browser-dtector/commit/069d6ae))
+
 ## v3.0.2 (2020-07-02)
 
 #### Internal
