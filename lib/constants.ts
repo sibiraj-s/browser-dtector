@@ -1,5 +1,6 @@
 export const KnownBrowsers = {
   chrome: 'Google Chrome',
+  brave: 'Brave',
   crios: 'Google Chrome',
   edge: 'Microsoft Edge',
   edg: 'Microsoft Edge',

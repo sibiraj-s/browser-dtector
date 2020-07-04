@@ -1,5 +1,6 @@
 declare const KnownBrowsers: {
   chrome: string;
+  brave: string;
   crios: string;
   edge: string;
   edg: string;
@@ -60,6 +61,14 @@ export class BrowserDtector {
   constructor(inputUA?: string);
   parseUserAgent(userAgent?: string): BrowserInfoFull;
   getBrowserInfo(): BrowserInfo;
+}
+
+interface Brave {
+  isBrave(): Promise<boolean>
+}
+
+export interface NavigatorExtended extends Navigator {
+  brave?: Brave
 }
 
 export default BrowserDtector;

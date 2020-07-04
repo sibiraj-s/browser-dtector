@@ -3,13 +3,28 @@ import utils from './utils';
 
 import { version as pkgVersion } from '../package.json';
 
-import { BrowserInfoFull, BrowserMatches, KnownBrowsersKeys, KnownPlatformsKeys, BrowserInfo } from './types';
+import {
+  BrowserInfoFull,
+  BrowserMatches,
+  KnownBrowsersKeys,
+  KnownPlatformsKeys,
+  BrowserInfo,
+  NavigatorExtended
+} from './types';
+
+const getNavigator = (): NavigatorExtended | null => {
+  if (typeof window !== 'undefined') {
+    return window.navigator as NavigatorExtended;
+  }
+
+  return null;
+};
 
 class BrowserDtector {
   userAgent: string | null
 
   constructor(inputUA?: string) {
-    this.userAgent = inputUA || (typeof window !== 'undefined' ? window.navigator.userAgent : null);
+    this.userAgent = inputUA || getNavigator()?.userAgent || null;
   }
 
   static get VERSION() {
@@ -58,9 +73,15 @@ class BrowserDtector {
       || /(cros)/.exec(ua)
       || [];
 
-    const name = browserMatch[5] || browserMatch[3] || browserMatch[1] || null;
+    let name = browserMatch[5] || browserMatch[3] || browserMatch[1] || null;
     const platform = platformMatch[0] || null;
     const version = browserMatch[4] || browserMatch[2] || null;
+
+    // brave browser doesn't expose itslef via useragent
+    const navigator = getNavigator();
+    if (typeof navigator?.brave?.isBrave === 'function') {
+      name = 'brave';
+    }
 
     if (name) {
       browserMatches[name] = true;
@@ -99,7 +120,8 @@ class BrowserDtector {
     );
 
     const isWebkit = !!(
-      browserMatches.chrome
+      browserMatches.brave
+      || browserMatches.chrome
       || browserMatches.crios
       || browserMatches.opr
       || browserMatches.safari
