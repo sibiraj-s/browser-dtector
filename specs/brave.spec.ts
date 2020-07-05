@@ -1,18 +1,16 @@
 import assert from './assert';
 import { NavigatorExtended } from '../lib/types';
 
-const navigator: NavigatorExtended = global.navigator;
-
 beforeAll(() => {
   const brave = {
     isBrave: jest.fn(),
   };
 
-  navigator.brave = brave;
+  (navigator as NavigatorExtended).brave = brave;
 });
 
 afterAll(() => {
-  delete navigator.brave;
+  delete (navigator as NavigatorExtended).brave;
 });
 
 it('should detect `Brave` `v83` running in `Mac Os`', () => {
