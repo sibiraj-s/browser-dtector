@@ -11,6 +11,9 @@ overrides:
       - 'plugin:react/recommended'
       - 'plugin:react-hooks/recommended'
       - 'pegasus'
+    settings:
+      react:
+        version: detect
 
     env:
       browser: true
