@@ -14,6 +14,12 @@ All notable changes to this project will be documented in this file.
 > - Internal
 > - Unreleased
 
+## v3.1.1 (2020-07-05)
+
+#### Bug Fixes
+
+- update typings ([65956e7](https://github.com/sibiraj-s/browser-dtector/commit/65956e7))
+
 ## v3.1.0 (2020-07-04)
 
 #### Features
