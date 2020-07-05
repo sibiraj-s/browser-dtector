@@ -38,7 +38,6 @@ it('should detect `Mozilla Firefox` `v10` running in `Mac OS X on PowerPC`', () 
   assert(testData);
 });
 
-
 it('should detect `Mozilla Firefox` `v10` running in `Linux desktop, i686`', () => {
   const testData = {
     userAgent: 'Mozilla/5.0 (X11; Linux i686; rv:10.0) Gecko/20100101 Firefox/10.0',

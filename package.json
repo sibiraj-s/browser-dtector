@@ -49,6 +49,7 @@
     "chalk": "^4.1.0",
     "eslint": "^7.4.0",
     "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-config-pegasus": "^1.0.0",
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-react": "^7.20.3",
     "eslint-plugin-react-hooks": "^4.0.5",

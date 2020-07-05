@@ -1,11 +1,5 @@
 root: true
 
-rules:
-  semi: error
-  max-len:
-    - error
-    - code: 120
-
 overrides:
   - files: ['*.ts', '*.tsx']
     parser: '@typescript-eslint/parser'
@@ -16,16 +10,17 @@ overrides:
       - 'plugin:@typescript-eslint/recommended'
       - 'plugin:react/recommended'
       - 'plugin:react-hooks/recommended'
+      - 'pegasus'
+
     env:
       browser: true
       jest: true
 
   - files: '*.js'
-    extends: 'airbnb-base'
+    extends:
+      - 'airbnb-base'
+      - 'pegasus'
     rules:
-      max-len:
-        - error
-        - code: 120
       no-console: off
       import/no-extraneous-dependencies: off
     env:

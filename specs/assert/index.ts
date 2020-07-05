@@ -26,7 +26,7 @@ const assert = (testData: TestData): void => {
     isAndroid,
     isTablet,
     isMobile,
-    isIE
+    isIE,
   } = testData;
 
   const browserDtect = new BrowserDtector(userAgent ?? '');
@@ -49,7 +49,7 @@ const assert = (testData: TestData): void => {
   expect(typeof browserDtect.getBrowserInfo()).toBe('object');
 };
 
-export const assertPasreUserAgent = (testData: TestData) => {
+export const assertPasreUserAgent = (testData: TestData):void => {
   const {
     userAgent,
     browserName,
@@ -61,7 +61,7 @@ export const assertPasreUserAgent = (testData: TestData) => {
     isAndroid,
     isTablet,
     isMobile,
-    isIE
+    isIE,
   } = testData;
 
   const browserDtect = new BrowserDtector();

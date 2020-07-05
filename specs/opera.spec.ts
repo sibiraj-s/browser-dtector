@@ -37,7 +37,6 @@ it('should detect `Opera` `v12` running in `Android Tablet`', () => {
   assert(testData);
 });
 
-
 it('should detect `Opera` `v11` running in `IPad`', () => {
   const testData = {
     userAgent: 'Opera/9.80 (iPad; Opera Mini/9.1.0/35.6998; U; nb) Presto/2.8.119 Version/11.10',

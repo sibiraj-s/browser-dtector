@@ -9,7 +9,7 @@ import {
   KnownBrowsersKeys,
   KnownPlatformsKeys,
   BrowserInfo,
-  NavigatorExtended
+  NavigatorExtended,
 } from './types';
 
 const getNavigator = (): NavigatorExtended | null => {
@@ -27,7 +27,7 @@ class BrowserDtector {
     this.userAgent = inputUA || getNavigator()?.userAgent || null;
   }
 
-  static get VERSION() {
+  static get VERSION():string {
     return pkgVersion;
   }
 
@@ -144,7 +144,7 @@ class BrowserDtector {
       isMobile,
       isDesktop,
       isWebkit,
-      isIE
+      isIE,
     };
 
     return browserInfo;
