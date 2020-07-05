@@ -56,9 +56,9 @@ export interface BrowserInfoFull extends BrowserInfo {
 export type BrowserMatches = { [key: string]: boolean }
 
 export class BrowserDtector {
-  userAgent: string;
-  VERSION: string;
   constructor(inputUA?: string);
+  userAgent: string | null;
+  static VERSION: string;
   parseUserAgent(userAgent?: string): BrowserInfoFull;
   getBrowserInfo(): BrowserInfo;
 }
