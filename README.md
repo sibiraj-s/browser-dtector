@@ -88,9 +88,10 @@ console.log('Server running at http://127.0.0.1:8080/');
 
 - Google Chrome
 - Mozilla Firefox
-- Microsoft Internet Explorer
 - Microsoft Edge
 - Safari
+- Brave Browser
+- Microsoft Internet Explorer
 - Opera
 - Samsung Browser
 
