@@ -27,15 +27,15 @@ const banner = `/*!
  */
 `;
 
-async function cleanOutDir() {
+const cleanOutDir = async function () {
   await fs.promises.rmdir(outDir, { recursive: true });
-}
+};
 
-async function cleanDocsDir() {
+const cleanDocsDir = async function () {
   await fs.promises.rmdir(docsDir, { recursive: true });
-}
+};
 
-async function compile() {
+const compile = async function () {
   const bundle = await rollup.rollup({
     input: 'lib/browser-dtector.ts',
     plugins: [
@@ -71,17 +71,17 @@ async function compile() {
     sourcemap: true,
     banner,
   });
-}
+};
 
-function minify() {
+const minify = function () {
   return gulp.src('dist/lib/*.js')
     .pipe(sourcemap.init())
     .pipe(terser())
     .pipe(sourcemap.write('.'))
     .pipe(gulp.dest(libDir));
-}
+};
 
-async function updatePackageJSON() {
+const updatePackageJSON = async function () {
   const targetPkgJsonPath = path.resolve(libDir, 'package.json');
   const jsonStr = await fs.promises.readFile(targetPkgJsonPath, 'utf-8');
 
@@ -98,10 +98,10 @@ async function updatePackageJSON() {
   delete pkgJson.private;
   delete pkgJson.engines;
 
-  await fs.promises.writeFile(targetPkgJsonPath, JSON.stringify((pkgJson), null, 2));
-}
+  await fs.promises.writeFile(targetPkgJsonPath, JSON.stringify(pkgJson, null, 2));
+};
 
-function copyFiles() {
+const copyFiles = function () {
   return gulp.src([
     'README.md',
     'CHANGELOG.md',
@@ -109,9 +109,9 @@ function copyFiles() {
     'package.json',
     'lib/types.d.ts',
   ]).pipe(gulp.dest(libDir));
-}
+};
 
-async function parcel() {
+const parcel = async function () {
   const entryFile = path.join(__dirname, 'docs/index.html');
 
   const options = {
@@ -123,7 +123,7 @@ async function parcel() {
 
   const bundler = new ParcelBundler(entryFile, options);
   await bundler.bundle();
-}
+};
 
 const buildDocs = gulp.series(cleanDocsDir, parcel);
 const build = gulp.series(cleanOutDir, compile, minify, copyFiles, updatePackageJSON, buildDocs);

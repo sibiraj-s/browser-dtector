@@ -10,7 +10,6 @@ overrides:
       - 'plugin:@typescript-eslint/recommended'
       - 'plugin:react/recommended'
       - 'plugin:react-hooks/recommended'
-      - 'pegasus'
     settings:
       react:
         version: detect
@@ -21,10 +20,8 @@ overrides:
 
   - files: '*.js'
     extends:
-      - 'airbnb-base'
       - 'pegasus'
     rules:
       no-console: off
-      import/no-extraneous-dependencies: off
     env:
       node: true

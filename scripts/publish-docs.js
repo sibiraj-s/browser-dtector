@@ -19,7 +19,7 @@ const questions = [
   },
 ];
 
-async function publish() {
+const publish = async function () {
   try {
     if (!process.env.CI) {
       const answers = await inquirer.prompt(questions);
@@ -36,6 +36,6 @@ async function publish() {
   } catch (err) {
     console.log(chalk.red('Unable to publish docs. Error:'), err);
   }
-}
+};
 
 publish();
