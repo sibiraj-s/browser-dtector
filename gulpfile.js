@@ -55,6 +55,7 @@ const compile = async function () {
     format: 'cjs',
     sourcemap: true,
     banner,
+    exports: 'default',
   });
 
   await bundle.write({
