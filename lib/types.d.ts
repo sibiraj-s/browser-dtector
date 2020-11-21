@@ -53,22 +53,23 @@ export interface BrowserInfoFull extends BrowserInfo {
   isIE: boolean;
 }
 
-export type BrowserMatches = { [key: string]: boolean }
+export type BrowserMatches = { [key: string]: boolean };
 
 export class BrowserDtector {
   constructor(inputUA?: string);
   userAgent: string | null;
+
   static VERSION: string;
   parseUserAgent(userAgent?: string): BrowserInfoFull;
   getBrowserInfo(): BrowserInfo;
 }
 
 interface Brave {
-  isBrave(): Promise<boolean>
+  isBrave(): Promise<boolean>;
 }
 
 export interface NavigatorExtended extends Navigator {
-  brave?: Brave
+  brave?: Brave;
 }
 
 export default BrowserDtector;

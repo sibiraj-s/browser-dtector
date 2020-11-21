@@ -2,26 +2,24 @@ root: true
 
 overrides:
   - files: ['*.ts', '*.tsx']
-    parser: '@typescript-eslint/parser'
-    plugins:
-      - '@typescript-eslint'
     extends:
-      - 'eslint:recommended'
-      - 'plugin:@typescript-eslint/recommended'
-      - 'plugin:react/recommended'
-      - 'plugin:react-hooks/recommended'
+      - pegasus
+      - pegasus/typescript
+    parserOptions:
+      project: tsconfig.json
     settings:
       react:
         version: detect
-
+    rules:
+      prefer-named-capture-group: off
+      complexity: off
     env:
       browser: true
       jest: true
 
   - files: '*.js'
     extends:
-      - 'pegasus'
+      - pegasus
+      - pegasus/node
     rules:
       no-console: off
-    env:
-      node: true

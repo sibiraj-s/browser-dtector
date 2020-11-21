@@ -9,10 +9,10 @@ const App = (): JSX.Element => {
   return (
     <HashRouter>
       <Nav />
-      <div className="container">
+      <div className='container'>
         <Switch>
-          <Route path="/" exact component={BrowserDtector} />
-          <Route path="/ua-parser" component={UserAgentParser} />
+          <Route path='/' exact component={BrowserDtector} />
+          <Route path='/ua-parser' component={UserAgentParser} />
           <Route component={BrowserDtector} />
         </Switch>
       </div>

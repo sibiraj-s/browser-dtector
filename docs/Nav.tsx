@@ -19,8 +19,8 @@ const Nav = (): JSX.Element => {
   }, [location]);
 
   return (
-    <nav className="nav">
-      <Link className="text-crimson" to={goToPath.to}>{goToPath.name}</Link>
+    <nav className='nav'>
+      <Link className='text-crimson' to={goToPath.to}>{goToPath.name}</Link>
     </nav>
   );
 };

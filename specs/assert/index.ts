@@ -2,16 +2,16 @@ import BrowserDtector from '../../lib/browser-dtector';
 
 export interface TestData {
   userAgent: string | null;
-  browserName: string | null,
-  version: string | null,
-  shortVersion: string | null,
-  platform: string | null,
-  isDesktop: boolean,
-  isWebkit: boolean,
-  isAndroid: boolean,
-  isTablet: boolean,
-  isMobile: boolean,
-  isIE: boolean,
+  browserName: string | null;
+  version: string | null;
+  shortVersion: string | null;
+  platform: string | null;
+  isDesktop: boolean;
+  isWebkit: boolean;
+  isAndroid: boolean;
+  isTablet: boolean;
+  isMobile: boolean;
+  isIE: boolean;
 }
 
 const assert = (testData: TestData): void => {
