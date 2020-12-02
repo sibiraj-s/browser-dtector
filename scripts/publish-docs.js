@@ -1,6 +1,6 @@
 const util = require('util');
 
-const inquirer = require('inquirer');
+const prompts = require('prompts');
 const ghpages = require('gh-pages');
 const chalk = require('chalk');
 
@@ -19,16 +19,16 @@ const questions = [
   },
 ];
 
-const publish = async function () {
+const publish = async () => {
   try {
-    if (!process.env.CI) {
-      const answers = await inquirer.prompt(questions);
+    if (process.env.CI) {
+      prompts.inject([true]);
+    }
 
-      if (!answers.publishDocs) {
-        return;
-      }
-    } else {
-      console.log('CI detected. Skipping prompt.');
+    const answers = await prompts(questions);
+
+    if (!answers.publishDocs) {
+      return;
     }
 
     await publishAsync('dist/docs', ghPagesOptions);
