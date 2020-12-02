@@ -17,10 +17,7 @@
     "serve": "parcel docs/index.html --out-dir dist/docs --port 5007",
     "test": "jest",
     "lint": "eslint . --ignore-path .gitignore",
-    "prepublishOnly": "node ./scripts/prepublish.js",
-    "publish:docs": "gulp buildDocs && node ./scripts/publish-docs.js",
-    "prerelease": "npm run build",
-    "release": "sh ./scripts/release.sh"
+    "publish:docs": "gulp buildDocs && node ./scripts/publish-docs.js"
   },
   "keywords": [
     "browser",
