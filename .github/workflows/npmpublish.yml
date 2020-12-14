@@ -19,6 +19,13 @@ jobs:
           node-version: ${{env.NODE_VERSION}}
           registry-url: https://registry.npmjs.org/
 
+      - uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
       - run: npm ci
       - run: npm run build
       - run: npm publish dist/lib/
