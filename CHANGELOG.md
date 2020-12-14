@@ -14,6 +14,12 @@ All notable changes to this project will be documented in this file.
 > - Internal
 > - Unreleased
 
+## v3.1.2 (2020-12-14)
+
+#### Internal
+
+- update LICENSE ([a8d404f](https://github.com/sibiraj-s/browser-dtector/commit/a8d404f))
+
 ## v3.1.1 (2020-07-05)
 
 #### Bug Fixes
