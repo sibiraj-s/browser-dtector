@@ -20,13 +20,9 @@
     "publish:docs": "gulp buildDocs && node ./scripts/publish-docs.js"
   },
   "keywords": [
-    "browser",
-    "detector",
-    "browser-dtector",
     "browser-detector",
-    "useragent",
-    "useragent-parser",
-    "nodejs"
+    "detect-browser",
+    "useragent-parser"
   ],
   "devDependencies": {
     "@babel/core": "^7.12.16",
