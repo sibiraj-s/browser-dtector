@@ -1,4 +1,4 @@
-const util = require('util');
+const util = require('node:util');
 
 const prompts = require('prompts');
 const ghpages = require('gh-pages');
