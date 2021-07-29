@@ -1,11 +1,11 @@
-import BrowserDtector from '../lib/browser-dtector';
+import BrowserDetector from '../lib/browser-dtector';
 
 import assert from './assert';
 import pkgJson from '../package.json';
 
 it('should detect default useragent running in `jest`', () => {
-  const browserDtect = new BrowserDtector();
-  const browserInfo = browserDtect.parseUserAgent();
+  const browserDetect = new BrowserDetector();
+  const browserInfo = browserDetect.parseUserAgent();
 
   expect(typeof browserInfo).toBe('object');
   expect(browserInfo).toBeTruthy();
@@ -14,8 +14,8 @@ it('should detect default useragent running in `jest`', () => {
 
 it('should detect default useragent running in `jest` while invoked via `parseUserAgent`', () => {
   const ua = 'Mozilla/5.0 (darwin) AppleWebKit/537.36 (KHTML, like Gecko) jsdom/11.12.0';
-  const browserDtect = new BrowserDtector();
-  const browserInfo = browserDtect.parseUserAgent(ua);
+  const browserDetect = new BrowserDetector();
+  const browserInfo = browserDetect.parseUserAgent(ua);
 
   expect(typeof browserInfo).toBe('object');
   expect(browserInfo).toBeTruthy();
@@ -42,8 +42,8 @@ it('should detect `JsDOM` `v71` running in `JsDOM`', () => {
 
 it('should return null if `invalid useragent` is passed', () => {
   const ua = 'I am an invalid useragent';
-  const browserDtect = new BrowserDtector(ua);
-  const browserInfo = browserDtect.parseUserAgent();
+  const browserDetect = new BrowserDetector(ua);
+  const browserInfo = browserDetect.parseUserAgent();
 
   expect(browserInfo.name).toBe(null);
   expect(browserInfo.version).toBe(null);
@@ -53,14 +53,14 @@ it('should return null if `invalid useragent` is passed', () => {
 it('should null for unknown browsers', () => {
   const ua = `Mozilla/5.0 (Kali; Intel Kal OS X 10_15_1) AppleWebKit/537.36 (KHTML, like Gecko)
      Godzilla/78.0.3904.108 Gorilla/537.36`;
-  const browserDtect = new BrowserDtector();
-  const browserInfo = browserDtect.parseUserAgent(ua);
+  const browserDetect = new BrowserDetector();
+  const browserInfo = browserDetect.parseUserAgent(ua);
 
   expect(browserInfo.name).toBe(null);
 });
 
 it('should return correct version number', () => {
-  const version = BrowserDtector.VERSION;
+  const version = BrowserDetector.VERSION;
 
   expect(version).toBe(pkgJson.version);
 });

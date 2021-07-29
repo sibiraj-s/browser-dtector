@@ -20,7 +20,7 @@ const getNavigator = (): NavigatorExtended | null => {
   return null;
 };
 
-class BrowserDtector {
+class BrowserDetector {
   userAgent: string | null;
 
   constructor(inputUA?: string) {
@@ -151,4 +151,4 @@ class BrowserDtector {
   }
 }
 
-export default BrowserDtector;
+export default BrowserDetector;

@@ -33,9 +33,9 @@ or use cdn
 This library is compiled to [UMD][umd] format, you should be able to use it in both `Node.js` and `browser`.
 
 ```js
-import BrowserDtector from 'browser-dtector';
+import BrowserDetector from 'browser-dtector';
 
-const browser = new BrowserDtector(window.navigator.userAgent);
+const browser = new BrowserDetector(window.navigator.userAgent);
 browser.parseUserAgent();
 ```
 
@@ -45,9 +45,9 @@ _Note_: while using in nodejs, it is mandatory to input `useragent`.
 
 ```js
 const http = require('http');
-const BrowserDtector = require('browser-dtector');
+const BrowserDetector = require('browser-dtector');
 
-const browser = new BrowserDtector();
+const browser = new BrowserDetector();
 
 http
   .createServer((req, res) => {
@@ -70,14 +70,14 @@ console.log('Server running at http://127.0.0.1:8080/');
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>BrowserDtector</title>
+    <title>BrowserDetector</title>
   </head>
 
   <body>
     Hello World!
     <script src="//cdn.jsdelivr.net/npm/browser-dtector@latest/browser-dtector.min.js"></script>
     <script>
-      const browser = new window.BrowserDtector(window.navigator.userAgent); // or new BrowserDtector()
+      const browser = new window.BrowserDetector(window.navigator.userAgent); // or new BrowserDetector()
       console.log(browser.parseUserAgent());
     </script>
   </body>
@@ -118,9 +118,9 @@ console.log('Server running at http://127.0.0.1:8080/');
 Sample
 
 ```js
-import BrowserDtector from 'browser-dtector';
+import BrowserDetector from 'browser-dtector';
 
-const browser = new BrowserDtector(window.navigator.userAgent);
+const browser = new BrowserDetector(window.navigator.userAgent);
 browser.parseUserAgent();
 ```
 
@@ -158,7 +158,7 @@ browser.parseUserAgent();
 
 **Miscellaneous:**
 
-- **BrowserDtector.VERSION** [`string`]: Current version of the library.
+- **BrowserDetector.VERSION** [`string`]: Current version of the library.
 
 [npm]: https://www.npmjs.com/
 [yarn]: https://yarnpkg.com/lang/en/

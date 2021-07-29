@@ -1,15 +1,15 @@
 import React from 'react';
 
-import BrowserDtector from '../lib/browser-dtector';
+import BrowserDetector from '../lib/browser-dtector';
 
-const BrowserDtectorComponent = (): JSX.Element => {
-  const browser = new BrowserDtector(window.navigator.userAgent);
+const BrowserDetectorComponent = (): JSX.Element => {
+  const browser = new BrowserDetector(window.navigator.userAgent);
   const parsedUA = browser.parseUserAgent();
   const isKnownBrowser = parsedUA.name !== null;
 
   return (
     <React.Fragment>
-      <div className='content justify-center browser-dtector'>
+      <div className='content justify-center browser-detector'>
         {isKnownBrowser
           && <React.Fragment>
             <p className='text'>
@@ -23,9 +23,9 @@ const BrowserDtectorComponent = (): JSX.Element => {
           && <p className='text'><span className='browser-name'>{'{ Unknown Browser }'}</span></p>
         }
       </div>
-      <footer className='footer'>BrowserDtector: v{BrowserDtector.VERSION}</footer>
+      <footer className='footer'>BrowserDetector: v{BrowserDetector.VERSION}</footer>
     </React.Fragment>
   );
 };
 
-export default BrowserDtectorComponent;
+export default BrowserDetectorComponent;

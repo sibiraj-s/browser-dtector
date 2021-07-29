@@ -66,7 +66,7 @@ const compile = async function () {
   });
 
   await bundle.write({
-    name: 'BrowserDtector',
+    name: 'BrowserDetector',
     file: 'dist/lib/browser-dtector.umd.js',
     format: 'umd',
     sourcemap: true,

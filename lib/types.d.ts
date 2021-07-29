@@ -55,7 +55,7 @@ export interface BrowserInfoFull extends BrowserInfo {
 
 export type BrowserMatches = { [key: string]: boolean };
 
-export class BrowserDtector {
+export class BrowserDetector {
   constructor(inputUA?: string);
   userAgent: string | null;
 
@@ -72,4 +72,4 @@ export interface NavigatorExtended extends Navigator {
   brave?: Brave;
 }
 
-export default BrowserDtector;
+export default BrowserDetector;

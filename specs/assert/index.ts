@@ -1,4 +1,4 @@
-import BrowserDtector from '../../lib/browser-dtector';
+import BrowserDetector from '../../lib/browser-dtector';
 
 export interface TestData {
   userAgent: string | null;
@@ -29,10 +29,10 @@ const assert = (testData: TestData): void => {
     isIE,
   } = testData;
 
-  const browserDtect = new BrowserDtector(userAgent ?? '');
-  const browserInfo = browserDtect.parseUserAgent();
+  const browserDetect = new BrowserDetector(userAgent ?? '');
+  const browserInfo = browserDetect.parseUserAgent();
 
-  expect(browserDtect.userAgent).toBe(userAgent);
+  expect(browserDetect.userAgent).toBe(userAgent);
 
   expect(browserInfo.name).toBe(browserName);
   expect(browserInfo.version).toBe(version);
@@ -45,8 +45,8 @@ const assert = (testData: TestData): void => {
   expect(browserInfo.isMobile).toBe(isMobile);
   expect(browserInfo.isIE).toBe(isIE);
 
-  expect(browserDtect.getBrowserInfo()).toBeTruthy();
-  expect(typeof browserDtect.getBrowserInfo()).toBe('object');
+  expect(browserDetect.getBrowserInfo()).toBeTruthy();
+  expect(typeof browserDetect.getBrowserInfo()).toBe('object');
 };
 
 export const assertPasreUserAgent = (testData: TestData):void => {
@@ -64,10 +64,10 @@ export const assertPasreUserAgent = (testData: TestData):void => {
     isIE,
   } = testData;
 
-  const browserDtect = new BrowserDtector();
-  const browserInfo = browserDtect.parseUserAgent(userAgent ?? '');
+  const browserDetect = new BrowserDetector();
+  const browserInfo = browserDetect.parseUserAgent(userAgent ?? '');
 
-  expect(browserDtect.userAgent).toBeNull();
+  expect(browserDetect.userAgent).toBeNull();
 
   expect(browserInfo.name).toBe(browserName);
   expect(browserInfo.version).toBe(version);
