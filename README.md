@@ -19,13 +19,13 @@ or use cdn
 **Minified:**
 
 ```bash
-//cdn.jsdelivr.net/npm/browser-dtector@latest/browser-dtector.umd.min.js
+//cdn.jsdelivr.net/npm/browser-dtector@latest/browser-dtector.esm.min.js
 ```
 
 **Pretty Printed:**
 
 ```bash
-//cdn.jsdelivr.net/npm/browser-dtector@latest/browser-dtector.umd.js
+//cdn.jsdelivr.net/npm/browser-dtector@latest/browser-dtector.esm.js
 ```
 
 ### Usage
@@ -75,10 +75,11 @@ console.log('Server running at http://127.0.0.1:8080/');
 
   <body>
     Hello World!
-    <script src="//cdn.jsdelivr.net/npm/browser-dtector@latest/browser-dtector.min.js"></script>
-    <script>
-      const browser = new window.BrowserDetector(window.navigator.userAgent); // or new BrowserDetector()
-      console.log(browser.parseUserAgent());
+    <script type="module">
+      import BrowserDetector from 'https://cdn.jsdelivr.net/npm/browser-dtector/browser-dtector.esm.js';
+
+      const detector = new BrowserDetector(window.navigator.userAgent);
+      console.log(detector.parseUserAgent());
     </script>
   </body>
 </html>
