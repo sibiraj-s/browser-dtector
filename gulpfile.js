@@ -28,11 +28,11 @@ const banner = `/*!
 `;
 
 const cleanOutDir = async function () {
-  await fs.promises.rmdir(outDir, { recursive: true });
+  await fs.promises.rm(outDir, { recursive: true, force: true });
 };
 
 const cleanDocsDir = async function () {
-  await fs.promises.rmdir(docsDir, { recursive: true });
+  await fs.promises.rm(docsDir, { recursive: true, force: true });
 };
 
 const compile = async function () {
