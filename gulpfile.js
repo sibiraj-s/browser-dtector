@@ -46,11 +46,6 @@ const compile = async function () {
       babel({
         babelHelpers: 'bundled',
         extensions: supportedFileExtension,
-        presets: [
-          '@babel/preset-env',
-          '@babel/preset-typescript',
-          '@babel/preset-react',
-        ],
       }),
     ],
   });
