@@ -8,7 +8,7 @@ const { babel } = require('@rollup/plugin-babel');
 const { nodeResolve } = require('@rollup/plugin-node-resolve');
 const terser = require('gulp-plugin-terser');
 const sourcemap = require('gulp-sourcemaps');
-const ParcelBundler = require('parcel-bundler');
+const Parcel = require('@parcel/core').default;
 
 const pkg = require('./package.json');
 
@@ -46,6 +46,11 @@ const compile = async function () {
       babel({
         babelHelpers: 'bundled',
         extensions: supportedFileExtension,
+        presets: [
+          '@babel/preset-env',
+          '@babel/preset-typescript',
+          '@babel/preset-react',
+        ],
       }),
     ],
   });
@@ -112,21 +117,21 @@ const copyFiles = function () {
   ]).pipe(gulp.dest(libDir));
 };
 
-const parcel = async function () {
-  const entryFile = path.join(__dirname, 'docs/index.html');
+const compileDocs = async function () {
+  const bundler = new Parcel({
+    entries: path.join(__dirname, 'docs/index.html'),
+    defaultConfig: '@parcel/config-default',
+    mode: 'production',
+    defaultTargetOptions: {
+      distDir: path.join(__dirname, 'dist/docs/'),
+      publicUrl: '/browser-dtector/',
+    },
+  });
 
-  const options = {
-    outDir: path.join(__dirname, 'dist/docs'),
-    publicUrl: '/browser-dtector/',
-    watch: false,
-    minify: true,
-  };
-
-  const bundler = new ParcelBundler(entryFile, options);
-  await bundler.bundle();
+  await bundler.run();
 };
 
-const buildDocs = gulp.series(cleanDocsDir, parcel);
+const buildDocs = gulp.series(cleanDocsDir, compileDocs);
 const build = gulp.series(cleanOutDir, compile, minify, copyFiles, updatePackageJSON, buildDocs);
 
 exports.build = build;
