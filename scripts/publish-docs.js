@@ -1,8 +1,7 @@
 const util = require('node:util');
-
 const prompts = require('prompts');
 const ghpages = require('gh-pages');
-const chalk = require('chalk');
+const color = require('picocolors');
 
 const publishAsync = util.promisify(ghpages.publish);
 
@@ -15,7 +14,7 @@ const questions = [
   {
     name: 'publishDocs',
     type: 'confirm',
-    message: `Do You want to publish the docs to '${chalk.cyan(ghPagesOptions.branch)}' branch?`,
+    message: `Do You want to publish the docs to '${color.cyan(ghPagesOptions.branch)}' branch?`,
   },
 ];
 
@@ -32,9 +31,9 @@ const publish = async () => {
     }
 
     await publishAsync('dist/docs', ghPagesOptions);
-    console.log(chalk.green(`\nDocumentation published successfully to ${chalk.cyan('\'gh-pages\'')} \n`));
+    console.log(color.green(`\nDocumentation published successfully to ${color.cyan('\'gh-pages\'')} \n`));
   } catch (err) {
-    console.log(chalk.red('Unable to publish docs. Error:'), err);
+    console.log(color.red('Unable to publish docs. Error:'), err);
   }
 };
 
