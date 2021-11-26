@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter, Switch, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 
 import BrowserDetector from './BrowserDetector';
 import UserAgentParser from './UserAgentParser';
@@ -10,13 +10,13 @@ const App = (): JSX.Element => {
     <HashRouter>
       <Nav />
       <div className='container'>
-        <Switch>
-          <Route path='/' exact component={BrowserDetector} />
-          <Route path='/ua-parser' component={UserAgentParser} />
-          <Route component={BrowserDetector} />
-        </Switch>
+        <Routes>
+          <Route path='/' element={<BrowserDetector />} />
+          <Route path='/ua-parser' element={<UserAgentParser />} />
+          <Route element={<BrowserDetector />} />
+        </Routes>
       </div>
-    </HashRouter>
+    </HashRouter >
   );
 };
 
