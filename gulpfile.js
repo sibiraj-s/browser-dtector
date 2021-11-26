@@ -1,11 +1,10 @@
 const path = require('node:path');
 const fs = require('node:fs');
-
 const gulp = require('gulp');
 const rollup = require('rollup');
 const json = require('@rollup/plugin-json');
-const { babel } = require('@rollup/plugin-babel');
-const { nodeResolve } = require('@rollup/plugin-node-resolve');
+const babel = require('@rollup/plugin-babel').default;
+const nodeResolve = require('@rollup/plugin-node-resolve').default;
 const terser = require('gulp-plugin-terser');
 const sourcemap = require('gulp-sourcemaps');
 const Parcel = require('@parcel/core').default;
@@ -126,9 +125,26 @@ const compileDocs = async function () {
   await bundler.run();
 };
 
+const serveDocs = async function () {
+  const bundler = new Parcel({
+    entries: path.join(__dirname, 'docs/index.html'),
+    defaultConfig: '@parcel/config-default',
+    serveOptions: {
+      port: 5007,
+    },
+    hmrOptions: {
+      port: 5007,
+    },
+  });
+
+  await bundler.watch();
+};
+
+const server = gulp.series(cleanDocsDir, serveDocs);
 const buildDocs = gulp.series(cleanDocsDir, compileDocs);
 const build = gulp.series(cleanOutDir, compile, minify, copyFiles, updatePackageJSON, buildDocs);
 
+exports.serve = server;
 exports.build = build;
 exports.buildDocs = buildDocs;
 exports.default = build;
