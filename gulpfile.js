@@ -119,7 +119,7 @@ const compileDocs = async function () {
     defaultConfig: '@parcel/config-default',
     mode: 'production',
     defaultTargetOptions: {
-      distDir: path.join(__dirname, 'dist/docs/'),
+      distDir: docsDir,
       publicUrl: '/browser-dtector/',
     },
   });
