@@ -21,7 +21,7 @@ jobs:
           cache: npm
 
       - run: npm ci
-      - run: npm run build
+      - run: npm run build:lib
       - run: npm publish dist/lib/
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}

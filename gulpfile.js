@@ -144,9 +144,11 @@ const serveDocs = async function () {
 
 const server = gulp.series(cleanDocsDir, serveDocs);
 const buildDocs = gulp.series(cleanDocsDir, compileDocs);
-const build = gulp.series(cleanOutDir, compile, minify, copyFiles, updatePackageJSON, buildDocs);
+const buildLib = gulp.series(cleanOutDir, compile, minify, copyFiles, updatePackageJSON);
+const build = gulp.series(buildLib, buildDocs);
 
 exports.serve = server;
-exports.build = build;
 exports.buildDocs = buildDocs;
+exports.buildLib = buildLib;
+exports.build = build;
 exports.default = build;
