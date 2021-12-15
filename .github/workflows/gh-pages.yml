@@ -30,7 +30,7 @@ jobs:
       - name: NPM Install
         run: npm ci
 
-      - name: build
+      - name: Build
         run: npm run build:docs
 
       - name: Publish to gh-pages branch
