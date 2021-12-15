@@ -31,7 +31,7 @@ jobs:
         run: npm ci
 
       - name: build
-        run: npm ci
+        run: npm run build:docs
 
       - name: Publish to gh-pages branch
         uses: peaceiris/actions-gh-pages@v3
