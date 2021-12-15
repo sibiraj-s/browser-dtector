@@ -1,3 +1,5 @@
+import { expect, it } from '@jest/globals';
+
 import utils from '../lib/utils';
 
 it('should return fixed value with two decimals', () => {

@@ -1,5 +1,6 @@
-import BrowserDetector from '../lib/browser-dtector';
+import { expect, it } from '@jest/globals';
 
+import BrowserDetector from '../lib/browser-dtector';
 import assert from './assert';
 import pkgJson from '../package.json';
 

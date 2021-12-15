@@ -1,3 +1,5 @@
+import { expect } from '@jest/globals';
+
 import BrowserDetector from '../../lib/browser-dtector';
 
 export interface TestData {

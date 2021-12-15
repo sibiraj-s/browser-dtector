@@ -1,8 +1,10 @@
+import { it } from '@jest/globals';
+
 import assert from './assert';
 
 it('should detect `Microsoft Internet Explorer` `v7` running in `Windows`', () => {
   const testData = {
-    userAgent: `Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.1; WOW64; SLCC2; .NET CLR 2.0.50727; 
+    userAgent: `Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.1; WOW64; SLCC2; .NET CLR 2.0.50727;
                 .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; .NET4.0C; InfoPath.2)`,
     browserName: 'Microsoft Internet Explorer',
     version: '7.0',
@@ -93,7 +95,7 @@ it('should detect `Microsoft Internet Explorer` `v11` running in `Windows`', () 
 
 it('should detect `Microsoft Edge` `v14` running in `Windows`', () => {
   const testData = {
-    userAgent: `Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 (KHTML, like Gecko) 
+    userAgent: `Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 (KHTML, like Gecko)
                 Chrome/48.0.2564.82 Safari/537.36 Edge/14.14332`,
     browserName: 'Microsoft Edge',
     version: '14.14332',
@@ -112,7 +114,7 @@ it('should detect `Microsoft Edge` `v14` running in `Windows`', () => {
 
 it('should detect `Microsoft Edge` `v15` running in `Windows Phone`', () => {
   const testData = {
-    userAgent: `Mozilla/5.0 (Windows Phone 10.0; Android 6.0.1; Microsoft; Lumia 950) 
+    userAgent: `Mozilla/5.0 (Windows Phone 10.0; Android 6.0.1; Microsoft; Lumia 950)
                 AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Mobile Safari/537.36 Edge/15.14977`,
     browserName: 'Microsoft Edge',
     version: '15.14977',
@@ -131,7 +133,7 @@ it('should detect `Microsoft Edge` `v15` running in `Windows Phone`', () => {
 
 it('should detect `Microsoft Edge` `v16` running in `Windows Phone`', () => {
   const testData = {
-    userAgent: `Mozilla/5.0 (Windows Phone 10.0; Android 6.0.1; Xbox; Xbox One) AppleWebKit/537.36 
+    userAgent: `Mozilla/5.0 (Windows Phone 10.0; Android 6.0.1; Xbox; Xbox One) AppleWebKit/537.36
                 (KHTML, like Gecko) Chrome/58.0.3029.110 Mobile Safari/537.36 Edge/16.16299`,
     browserName: 'Microsoft Edge',
     version: '16.16299',
@@ -150,7 +152,7 @@ it('should detect `Microsoft Edge` `v16` running in `Windows Phone`', () => {
 
 it('should detect `Microsoft Edge` `v14` running in `Windows Phone`', () => {
   const testData = {
-    userAgent: `Mozilla/5.0 (Windows NT 10.0; ARM; Lumia 1520) AppleWebKit/537.36 (KHTML, like Gecko) 
+    userAgent: `Mozilla/5.0 (Windows NT 10.0; ARM; Lumia 1520) AppleWebKit/537.36 (KHTML, like Gecko)
                 Chrome/48.0.2564.82 Safari/537.36 Edge/14.14332`,
     browserName: 'Microsoft Edge',
     version: '14.14332',
@@ -169,7 +171,7 @@ it('should detect `Microsoft Edge` `v14` running in `Windows Phone`', () => {
 
 it('should detect `Microsoft Edge` `v15` running in `Windows`', () => {
   const testData = {
-    userAgent: `Mozilla/5.5 (Windows NT 10.5; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) 
+    userAgent: `Mozilla/5.5 (Windows NT 10.5; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko)
                 Chrome/52.5.2743.116 Safari/537.36 Edge/15.15063`,
     browserName: 'Microsoft Edge',
     version: '15.15063',
@@ -188,7 +190,7 @@ it('should detect `Microsoft Edge` `v15` running in `Windows`', () => {
 
 it('should detect `Microsoft Edge` `v16` running in `Windows`', () => {
   const testData = {
-    userAgent: `Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 (KHTML, like Gecko) 
+    userAgent: `Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 (KHTML, like Gecko)
                 Chrome/58.0.3029.110 Safari/537.36 Edge/16.16299,gzip(gfe)`,
     browserName: 'Microsoft Edge',
     version: '16.16299',
@@ -207,7 +209,7 @@ it('should detect `Microsoft Edge` `v16` running in `Windows`', () => {
 
 it('should detect `Microsoft Edge` `v17` running in `Windows`', () => {
   const testData = {
-    userAgent: `Mozilla/5.0 (Windows NT 6.0; Win64; x64)AppleWebKit/537.36 (KHTML, like Gecko) 
+    userAgent: `Mozilla/5.0 (Windows NT 6.0; Win64; x64)AppleWebKit/537.36 (KHTML, like Gecko)
                 Chrome/64.0.3282.140 Safari/537.36 Edge/17.17134`,
     browserName: 'Microsoft Edge',
     version: '17.17134',
@@ -226,7 +228,7 @@ it('should detect `Microsoft Edge` `v17` running in `Windows`', () => {
 
 it('should detect `Microsoft Edge` `v18` running in `Windows`', () => {
   const testData = {
-    userAgent: `Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) 
+    userAgent: `Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko)
                 Chrome/64.0.3282.140 Safari/537.36 Edge/18.17704`,
     browserName: 'Microsoft Edge',
     version: '18.17704',
@@ -245,7 +247,7 @@ it('should detect `Microsoft Edge` `v18` running in `Windows`', () => {
 
 it('should detect `Microsoft Edge` `v18` running in `Xbox`', () => {
   const testData = {
-    userAgent: `Mozilla/5.0 (Windows NT 10.0; Win64; x64; Xbox; Xbox One) AppleWebKit/537.36 
+    userAgent: `Mozilla/5.0 (Windows NT 10.0; Win64; x64; Xbox; Xbox One) AppleWebKit/537.36
                 (KHTML, like Gecko) Chrome/64.0.3282.140 Safari/537.36 Edge/18.17704`,
     browserName: 'Microsoft Edge',
     version: '18.17704',

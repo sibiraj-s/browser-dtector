@@ -64,7 +64,7 @@ export class BrowserDetector {
   getBrowserInfo(): BrowserInfo;
 }
 
-interface Brave {
+export interface Brave {
   isBrave(): Promise<boolean>;
 }
 
