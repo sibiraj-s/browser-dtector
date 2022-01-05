@@ -128,14 +128,16 @@ const compileDocs = async function () {
 };
 
 const serveDocs = async function () {
+  const PORT = 5007;
+
   const bundler = new Parcel({
     entries: path.join(__dirname, 'docs/index.html'),
     defaultConfig: '@parcel/config-default',
     serveOptions: {
-      port: 5007,
+      port: PORT,
     },
     hmrOptions: {
-      port: 5007,
+      port: PORT,
     },
   });
 
