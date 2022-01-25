@@ -51,6 +51,7 @@
     "gulp": "^4.0.2",
     "gulp-plugin-terser": "^2.0.0",
     "gulp-sourcemaps": "^3.0.0",
+    "gulplog": "^1.0.0",
     "husky": "^7.0.4",
     "is-ci": "^3.0.1",
     "jest": "^27.4.7",

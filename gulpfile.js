@@ -8,6 +8,7 @@ const nodeResolve = require('@rollup/plugin-node-resolve').default;
 const terser = require('gulp-plugin-terser');
 const sourcemap = require('gulp-sourcemaps');
 const Parcel = require('@parcel/core').default;
+const logger = require('gulplog');
 
 const pkg = require('./package.json');
 
@@ -129,6 +130,8 @@ const compileDocs = async function () {
 
 const serveDocs = async function () {
   const PORT = 5007;
+
+  logger.info(`Server running in port ${PORT}. URL: http://localhost:${PORT}`);
 
   const bundler = new Parcel({
     entries: path.join(__dirname, 'docs/index.html'),
