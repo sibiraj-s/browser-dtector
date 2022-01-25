@@ -91,7 +91,7 @@ console.log('Server running at http://127.0.0.1:8080/');
 - Mozilla Firefox
 - Microsoft Edge
 - Safari
-- Brave Browser
+- Brave
 - Microsoft Internet Explorer
 - Opera
 - Samsung Browser
