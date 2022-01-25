@@ -27,7 +27,7 @@ class BrowserDetector {
     this.userAgent = inputUA || getNavigator()?.userAgent || null;
   }
 
-  static get VERSION():string {
+  static get VERSION(): string {
     return pkgVersion;
   }
 
@@ -44,6 +44,7 @@ class BrowserDetector {
       || (/(opr)[/]([\w.]+)/).exec(ua)
       || (/(jsdom)[/]([\w.]+)/).exec(ua)
       || (/(samsungbrowser)[/]([\w.]+)/).exec(ua)
+      || (/(electron)[/]([\w.]+)/).exec(ua)
       || (/(chrome)[/]([\w.]+)/).exec(ua)
       || (/(crios)[/]([\w.]+)/).exec(ua)
       || (/(opios)[/]([\w.]+)/).exec(ua)
@@ -116,7 +117,8 @@ class BrowserDetector {
       || browserMatches.crios
       || browserMatches.opr
       || browserMatches.safari
-      || browserMatches.edg);
+      || browserMatches.edg
+      || browserMatches.electron);
 
     const isIE = Boolean(browserMatches.msie
       || browserMatches.rv);

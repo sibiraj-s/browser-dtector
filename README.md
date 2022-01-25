@@ -95,6 +95,7 @@ console.log('Server running at http://127.0.0.1:8080/');
 - Microsoft Internet Explorer
 - Opera
 - Samsung Browser
+- Electron
 
 ### Supported Platforms
 

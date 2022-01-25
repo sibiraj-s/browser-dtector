@@ -14,6 +14,7 @@ export const KnownBrowsers = {
   rv: 'Microsoft Internet Explorer',
   safari: 'Safari',
   samsungbrowser: 'Samsung Browser',
+  electron: 'Electron',
 };
 
 export const KnownPlatforms = {

@@ -14,6 +14,7 @@ declare const KnownBrowsers: {
   rv: string;
   safari: string;
   samsungbrowser: string;
+  electron: string;
 };
 
 declare const KnownPlatforms: {
