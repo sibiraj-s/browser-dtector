@@ -23,7 +23,8 @@
   "keywords": [
     "browser-detector",
     "detect-browser",
-    "useragent-parser"
+    "useragent-parser",
+    "ua-parser"
   ],
   "devDependencies": {
     "@babel/core": "^7.16.7",
