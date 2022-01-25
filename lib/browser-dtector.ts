@@ -79,8 +79,12 @@ class BrowserDetector {
     const version = browserMatch[4] || browserMatch[2] || null;
 
     // brave browser doesn't expose itslef via useragent
+    // but as chrome browser
     const navigator = getNavigator();
-    if (typeof navigator?.brave?.isBrave === 'function') {
+    if (
+      name === 'chrome'
+      && typeof navigator?.brave?.isBrave === 'function'
+    ) {
       name = 'brave';
     }
 
