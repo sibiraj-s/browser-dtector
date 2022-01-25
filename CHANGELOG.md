@@ -14,6 +14,16 @@ All notable changes to this project will be documented in this file.
 > - Internal
 > - Unreleased
 
+## v3.2.0 (2022-01-25)
+
+#### Features
+
+- detect electron browser ([77b5f0a](https://github.com/sibiraj-s/browser-dtector/commit/77b5f0a))
+
+#### Bug Fixes
+
+- fix brave browser detection for non chrome browsers ([b56c16c](https://github.com/sibiraj-s/browser-dtector/commit/b56c16c))
+
 ## v3.1.2 (2020-12-14)
 
 #### Internal
