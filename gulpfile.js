@@ -6,7 +6,6 @@ const json = require('@rollup/plugin-json');
 const babel = require('@rollup/plugin-babel').default;
 const nodeResolve = require('@rollup/plugin-node-resolve').default;
 const terser = require('gulp-plugin-terser');
-const sourcemap = require('gulp-sourcemaps');
 const Parcel = require('@parcel/core').default;
 const logger = require('gulplog');
 
@@ -77,11 +76,9 @@ const compile = async function () {
 };
 
 const minify = function () {
-  return gulp.src('dist/lib/*.js')
-    .pipe(sourcemap.init())
+  return gulp.src('dist/lib/*.js', { sourcemaps: true })
     .pipe(terser())
-    .pipe(sourcemap.write('.'))
-    .pipe(gulp.dest(libDir));
+    .pipe(gulp.dest(libDir, { sourcemaps: '.' }));
 };
 
 const updatePackageJSON = async function () {
