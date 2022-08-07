@@ -55,4 +55,4 @@ jobs:
         run: npm ci
 
       - name: Run Rollup
-        run: npm run build:lib --if-present
+        run: npm run build

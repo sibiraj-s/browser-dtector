@@ -6,14 +6,11 @@ const json = require('@rollup/plugin-json');
 const babel = require('@rollup/plugin-babel').default;
 const nodeResolve = require('@rollup/plugin-node-resolve').default;
 const terser = require('gulp-plugin-terser');
-const Parcel = require('@parcel/core').default;
-const logger = require('gulplog');
 
 const pkg = require('./package.json');
 
 const outDir = path.resolve(__dirname, 'dist');
 const libDir = path.resolve(outDir, 'lib');
-const docsDir = path.resolve(outDir, 'docs');
 
 const supportedFileExtension = ['.js', '.ts'];
 
@@ -28,10 +25,6 @@ const banner = `/*!
 
 const cleanOutDir = async function () {
   await fs.rm(outDir, { recursive: true, force: true });
-};
-
-const cleanDocsDir = async function () {
-  await fs.rm(docsDir, { recursive: true, force: true });
 };
 
 const compile = async function () {
@@ -111,46 +104,7 @@ const copyFiles = function () {
   ]).pipe(gulp.dest(libDir));
 };
 
-const compileDocs = async function () {
-  const bundler = new Parcel({
-    entries: path.join(__dirname, 'docs/index.html'),
-    defaultConfig: '@parcel/config-default',
-    mode: 'production',
-    defaultTargetOptions: {
-      distDir: docsDir,
-      publicUrl: '/browser-dtector/',
-    },
-  });
+const build = gulp.series(cleanOutDir, compile, minify, copyFiles, updatePackageJSON);
 
-  await bundler.run();
-};
-
-const serveDocs = async function () {
-  const PORT = 5007;
-
-  logger.info(`Server running in port ${PORT}. URL: http://localhost:${PORT}`);
-
-  const bundler = new Parcel({
-    entries: path.join(__dirname, 'docs/index.html'),
-    defaultConfig: '@parcel/config-default',
-    serveOptions: {
-      port: PORT,
-    },
-    hmrOptions: {
-      port: PORT,
-    },
-  });
-
-  await bundler.watch();
-};
-
-const server = gulp.series(cleanDocsDir, serveDocs);
-const buildDocs = gulp.series(cleanDocsDir, compileDocs);
-const buildLib = gulp.series(cleanOutDir, compile, minify, copyFiles, updatePackageJSON);
-const build = gulp.series(buildLib, buildDocs);
-
-exports.serve = server;
-exports.buildDocs = buildDocs;
-exports.buildLib = buildLib;
 exports.build = build;
 exports.default = build;
