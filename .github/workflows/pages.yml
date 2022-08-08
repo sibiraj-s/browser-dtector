@@ -12,7 +12,7 @@ concurrency:
 
 jobs:
   build:
-    name: Publish to gh-pages
+    name: Build docs
     runs-on: ubuntu-latest
 
     permissions:
