@@ -42,6 +42,8 @@ class BrowserDetector {
     const browserMatch = (/(edge)\/([\w.]+)/).exec(ua)
       || (/(edg)[/]([\w.]+)/).exec(ua)
       || (/(opr)[/]([\w.]+)/).exec(ua)
+      || (/(fxios)[/]([\w.]+)/).exec(ua)
+      || (/(edgios)[/]([\w.]+)/).exec(ua)
       || (/(jsdom)[/]([\w.]+)/).exec(ua)
       || (/(samsungbrowser)[/]([\w.]+)/).exec(ua)
       || (/(electron)[/]([\w.]+)/).exec(ua)
