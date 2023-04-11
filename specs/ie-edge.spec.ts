@@ -301,3 +301,22 @@ it('should detect chromium based edge running in Windows', () => {
 
   assert(testData);
 });
+
+it('should detect `Microsoft Edge` `v110` running in `IPhone`', () => {
+  const testData = {
+    userAgent: `Mozilla/5.0 (iPhone; CPU iPhone OS 16_3_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko)
+                Version/16.0 EdgiOS/110.1587.63 Mobile/15E148 Safari/605.1.15`,
+    browserName: 'Microsoft Edge',
+    version: '110.1587.63',
+    shortVersion: '110.15',
+    platform: 'IPhone',
+    isDesktop: false,
+    isWebkit: false,
+    isAndroid: false,
+    isTablet: false,
+    isMobile: true,
+    isIE: false,
+  };
+
+  assert(testData);
+});
