@@ -1,6 +1,6 @@
 {
   "name": "browser-dtector",
-  "version": "3.2.0",
+  "version": "3.3.0",
   "description": "A Javascript library to detect browser, version and platform",
   "author": "sibiraj-s",
   "license": "MIT",

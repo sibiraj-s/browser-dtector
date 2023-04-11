@@ -14,6 +14,12 @@ All notable changes to this project will be documented in this file.
 > - Internal
 > - Unreleased
 
+## v3.3.0 (2023-04-11)
+
+#### Features
+
+- detect firefox and edge ios ([98e938f](https://github.com/sibiraj-s/browser-dtector/commit/98e938f))
+
 ## v3.2.0 (2022-01-25)
 
 #### Features
