@@ -14,9 +14,9 @@ const BrowserDetectorComponent = (): JSX.Element => {
           && <React.Fragment>
             <p className='text'>
               You are viewing this page in -
-              <span className='browser-name'>{'{'}{parsedUA.name}{'}'}</span>
+              <span className='browser-name'>{'{'}{parsedUA.name as string}{'}'}</span>
             </p>
-            <p className='sub-text'>{parsedUA.platform}, v{parsedUA.version}</p>
+            <p className='sub-text'>{parsedUA.platform as string}, v{parsedUA.version}</p>
           </React.Fragment>
         }
         {!isKnownBrowser
