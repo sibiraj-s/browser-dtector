@@ -14,6 +14,12 @@ All notable changes to this project will be documented in this file.
 > - Internal
 > - Unreleased
 
+## v3.3.1 (2023-07-01)
+
+#### Features
+
+- add npm package provenance ([58aabf0](https://github.com/sibiraj-s/browser-dtector/commit/58aabf0))
+
 ## v3.3.0 (2023-04-11)
 
 #### Features
