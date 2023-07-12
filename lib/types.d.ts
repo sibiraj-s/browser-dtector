@@ -11,6 +11,7 @@ declare const KnownBrowsers: {
   opera: string;
   opios: string;
   opr: string;
+  opt: string;
   rv: string;
   safari: string;
   samsungbrowser: string;

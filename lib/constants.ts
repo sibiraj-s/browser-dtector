@@ -13,6 +13,7 @@ export const KnownBrowsers = {
   opera: 'Opera',
   opios: 'Opera',
   opr: 'Opera',
+  opt: 'Opera',
   rv: 'Microsoft Internet Explorer',
   safari: 'Safari',
   samsungbrowser: 'Samsung Browser',

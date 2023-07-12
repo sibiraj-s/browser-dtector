@@ -150,3 +150,59 @@ it('should detect `Opera` `v43` running in `Windows`', () => {
 
   assert(testData);
 });
+
+it.only('should detect `Opera Touch` `v4` running in `Ipad`', () => {
+  const testData = {
+    userAgent: `Mozilla/5.0 (iPad; CPU OS 15_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko)
+                Version/15.5 Mobile/15E148 Safari/604.1 OPT/4.0.1`,
+    browserName: 'Opera',
+    version: '4.0.1',
+    shortVersion: '4',
+    platform: 'IPad',
+    isDesktop: false,
+    isWebkit: false,
+    isAndroid: false,
+    isTablet: true,
+    isMobile: true,
+    isIE: false,
+  };
+
+  assert(testData);
+});
+
+it.only('should detect `Opera Touch` `v4` running in `IPhone`', () => {
+  const testData = {
+    userAgent: `Mozilla/5.0 (iPhone; CPU iPhone OS 16_5_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko)
+                Version/16.5 Mobile/15E148 Safari/604.1 OPT/4.0.1`,
+    browserName: 'Opera',
+    version: '4.0.1',
+    shortVersion: '4',
+    platform: 'IPhone',
+    isDesktop: false,
+    isWebkit: false,
+    isAndroid: false,
+    isTablet: false,
+    isMobile: true,
+    isIE: false,
+  };
+
+  assert(testData);
+});
+
+it.only('should detect `Opera Touch` `v4` running in `Android`', () => {
+  const testData = {
+    userAgent: 'Mozilla/5.0 (Linux; Android 11; SM-A115F Build/RP1A.200720.012) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.129 Mobile Safari/537.36 OPT/2.9',
+    browserName: 'Opera',
+    version: '2.9',
+    shortVersion: '2.9',
+    platform: 'Android',
+    isDesktop: false,
+    isWebkit: false,
+    isAndroid: true,
+    isTablet: false,
+    isMobile: true,
+    isIE: false,
+  };
+
+  assert(testData);
+});
