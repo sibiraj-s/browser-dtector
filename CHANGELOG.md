@@ -14,6 +14,12 @@ All notable changes to this project will be documented in this file.
 > - Internal
 > - Unreleased
 
+## v3.4.0 (2023-07-12)
+
+#### Features
+
+- detect opera touch browser ([a5f8632](https://github.com/sibiraj-s/browser-dtector/commit/a5f8632))
+
 ## v3.3.1 (2023-07-01)
 
 #### Features
