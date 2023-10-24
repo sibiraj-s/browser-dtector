@@ -1,4 +1,4 @@
-declare const KnownBrowsers: {
+export declare const KnownBrowsers: {
   chrome: string;
   brave: string;
   crios: string;
@@ -18,7 +18,7 @@ declare const KnownBrowsers: {
   electron: string;
 };
 
-declare const KnownPlatforms: {
+export declare const KnownPlatforms: {
   android: string;
   androidTablet: string;
   cros: string;
