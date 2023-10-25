@@ -14,6 +14,38 @@ All notable changes to this project will be documented in this file.
 > - Internal
 > - Unreleased
 
+## v4.0.0 (2023-07-12)
+
+#### Features
+
+- export `KnownBrowsers` and `KnownPlatforms` constants ([bc6d65f](https://github.com/sibiraj-s/browser-dtector/commit/bc6d65f))
+
+#### Bug Fixes
+
+- fix exports configuration and type declaration for node environments ([bc6d65f](https://github.com/sibiraj-s/browser-dtector/commit/bc6d65f))
+
+#### Breaking Changes
+
+- removed umd build
+- use named exports for cjs formats ([bc6d65f](https://github.com/sibiraj-s/browser-dtector/commit/bc6d65f))
+
+Before
+
+```js
+const BrowserDetector = require('browser-dtector');
+```
+
+After
+
+```js
+const { BrowserDetector } = require('browser-dtector');
+```
+
+#### Internal
+
+- replace rollup with tsup ([ed1fc34](https://github.com/sibiraj-s/browser-dtector/commit/ed1fc34))
+- replace jest with vitest ([ed1fc34](https://github.com/sibiraj-s/browser-dtector/commit/ed1fc34))
+
 ## v3.4.0 (2023-07-12)
 
 #### Features

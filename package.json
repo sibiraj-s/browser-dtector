@@ -1,14 +1,19 @@
 {
   "name": "browser-dtector",
-  "version": "3.4.0",
+  "version": "4.0.0",
   "description": "A Javascript library to detect browser, version and platform",
   "author": "sibiraj-s",
   "license": "MIT",
-  "private": true,
   "type": "module",
   "repository": "https://github.com/sibiraj-s/browser-dtector.git",
   "homepage": "https://github.com/sibiraj-s/browser-dtector#readme",
   "bugs": "https://github.com/sibiraj-s/browser-dtector/issues",
+  "funding": [
+    {
+      "type": "github",
+      "url": "https://github.com/sponsors/sibiraj-s"
+    }
+  ],
   "engines": {
     "node": ">=16"
   },
