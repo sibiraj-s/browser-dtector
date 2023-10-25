@@ -31,7 +31,7 @@ jobs:
         run: npm run test --if-present
 
   build:
-    name: Rollup
+    name: Build
     runs-on: ubuntu-latest
     needs: test
 
@@ -48,5 +48,5 @@ jobs:
       - name: NPM Install
         run: npm ci
 
-      - name: Run Rollup
+      - name: Run Build
         run: npm run build
