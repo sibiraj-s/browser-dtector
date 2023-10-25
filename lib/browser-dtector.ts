@@ -160,4 +160,5 @@ class BrowserDetector {
   }
 }
 
+export { KnownBrowsers, KnownPlatforms, BrowserDetector };
 export default BrowserDetector;

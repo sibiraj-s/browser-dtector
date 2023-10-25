@@ -16,21 +16,13 @@ yarn add browser-dtector
 
 or use cdn
 
-**Minified:**
-
 ```bash
-//cdn.jsdelivr.net/npm/browser-dtector@latest/browser-dtector.esm.min.js
-```
-
-**Pretty Printed:**
-
-```bash
-//cdn.jsdelivr.net/npm/browser-dtector@latest/browser-dtector.esm.js
+//cdn.jsdelivr.net/npm/browser-dtector@latest/dist/browser-dtector.js
 ```
 
 ### Usage
 
-This library is compiled to [UMD][umd] format, you should be able to use it in both `Node.js` and `browser`.
+This library exports both ESM and CJS formats, you should be able to use it in both `Node.js` and `browser`.
 
 ```js
 import BrowserDetector from 'browser-dtector';
@@ -45,7 +37,7 @@ _Note_: while using in nodejs, it is mandatory to input `useragent`.
 
 ```js
 const http = require('http');
-const BrowserDetector = require('browser-dtector');
+const { BrowserDetector } = require('browser-dtector');
 
 const browser = new BrowserDetector();
 
@@ -76,7 +68,7 @@ console.log('Server running at http://127.0.0.1:8080/');
   <body>
     Hello World!
     <script type="module">
-      import BrowserDetector from 'https://cdn.jsdelivr.net/npm/browser-dtector/browser-dtector.esm.js';
+      import BrowserDetector from 'https://cdn.jsdelivr.net/npm/browser-dtector/dist/browser-dtector.js';
 
       const detector = new BrowserDetector(window.navigator.userAgent);
       console.log(detector.parseUserAgent());

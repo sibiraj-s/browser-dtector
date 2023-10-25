@@ -6,5 +6,7 @@ export default defineConfig({
   sourcemap: true,
   clean: true,
   outDir: 'dist',
-  format: ['cjs', 'esm', 'iife'],
+  format: ['esm', 'cjs'],
+  dts: true,
+  minify: process.env.CI === 'true',
 });
