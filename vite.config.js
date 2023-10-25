@@ -1,8 +1,9 @@
 import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
+  root: 'docs',
   build: {
-    outDir: 'docs/dist',
+    outDir: 'dist',
   },
   test: {
     environment: 'happy-dom',
