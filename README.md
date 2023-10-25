@@ -56,7 +56,7 @@ console.log('Server running at http://127.0.0.1:8080/');
 **Usage in HTML:**
 
 ```html
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
