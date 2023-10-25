@@ -1,11 +1,11 @@
-import { beforeAll, afterAll, it, jest } from '@jest/globals';
+import { beforeAll, afterAll, it, vi } from 'vitest';
 
 import assert from './assert';
 import { NavigatorExtended, Brave } from '../lib/types';
 
 beforeAll(() => {
   const brave: Brave = {
-    isBrave: jest.fn(),
+    isBrave: vi.fn(),
   };
 
   (navigator as NavigatorExtended).brave = brave;

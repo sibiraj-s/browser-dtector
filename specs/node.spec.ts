@@ -1,7 +1,7 @@
 /**
  * @jest-environment node
  */
-import { it } from '@jest/globals';
+import { it } from 'vitest';
 import assert, { assertPasreUserAgent } from './assert';
 
 it('should work in node environmnet', () => {
