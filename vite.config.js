@@ -6,6 +6,7 @@ export default defineConfig({
     outDir: 'dist',
   },
   test: {
+    root: '.',
     environment: 'happy-dom',
   },
 });
