@@ -25,6 +25,6 @@ jobs:
 
       - run: npm ci
       - run: npm run build
-      - run: npm publish --provenance dist/lib/
+      - run: npm publish --provenance
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
