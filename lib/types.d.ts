@@ -39,8 +39,8 @@ export type KnownBrowsersKeys = keyof typeof KnownBrowsers;
 export type KnownPlatformsKeys = keyof typeof KnownPlatforms;
 
 export interface BrowserInfo {
-  name: ValueOf<KnownBrowsersKeys> | null;
-  platform: ValueOf<KnownPlatformsKeys> | null;
+  name: ValueOf<typeof KnownBrowsers> | null;
+  platform: ValueOf<typeof KnownPlatforms> | null;
   userAgent: string;
   version: string | null;
   shortVersion: string | null;
