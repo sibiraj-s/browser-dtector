@@ -19,8 +19,8 @@ const Nav = (): JSX.Element => {
   }, [location]);
 
   return (
-    <nav className='nav'>
-      <Link className='text-crimson' to={goToPath.to}>{goToPath.name}</Link>
+    <nav className='flex justify-end p-4 fixed w-full z-10'>
+      <Link className='text-red-500 underline underline-offset-2' to={goToPath.to}>{goToPath.name}</Link>
     </nav>
   );
 };

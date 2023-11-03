@@ -9,7 +9,7 @@ const App = (): JSX.Element => {
   return (
     <HashRouter>
       <Nav />
-      <div className='container'>
+      <div className='relative h-screen p-4 flex flex-col'>
         <Routes>
           <Route path='/' element={<BrowserDetector />} />
           <Route path='/ua-parser' element={<UserAgentParser />} />

@@ -33,15 +33,15 @@ const UserAgentParserComponent = (): JSX.Element => {
   };
 
   return (
-    <div className='content useragent-parser'>
-      <p className='ua-text'><span className='text-crimson'>{'{'}UserAgent{'}'}</span> Parser</p>
-      <input type='text' className='ua-input' placeholder='Enter useragent string' onChange={handleChange} />
-      <div className='parsed-ua'>
+    <div className='max-w-2xl m-auto'>
+      <p className='text-center text-4xl mb-4'><span className='text-red-600'>{'{'}UserAgent{'}'}</span> Parser</p>
+      <input type='text' className='w-full bg-transparent outline-none px-2 py-3 border-b border-gray-500' placeholder='Enter useragent string' onChange={handleChange} />
+      <div className='bg-white p-2 rounded-md w-full mt-8 text-sm'>
         {isKnownBrowser
-          && <div className='current-ua'>
+          && <div>
             <b>Current UserAgent:</b> {parsedUA.userAgent}
-            <div className='parsed-results'>
-              <p className='parsed-results__title'>Parsed Results:</p>
+            <div className='mt-6'>
+              <p className='font-medium underline mb-2'>Parsed Results:</p>
               <table>
                 <tbody>
                   {uaDisplayTable.map(({ key, name }: DisplayTable) => <tr key={`uaKey__${key}`}><td>{name}</td><td>: {parsedUA[key]?.toString()}</td></tr>)}
@@ -51,8 +51,8 @@ const UserAgentParserComponent = (): JSX.Element => {
           </div>
         }
         {!isKnownBrowser
-          && <div className='current-ua'>
-            <span className='text-crimson'>Error: Unknown browser or Invalid UserAgent</span>
+          && <div>
+            <span className='text-red-600'>Error: Unknown browser or Invalid UserAgent</span>
           </div>
         }
       </div>

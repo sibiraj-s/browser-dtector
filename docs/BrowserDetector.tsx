@@ -9,21 +9,21 @@ const BrowserDetectorComponent = (): JSX.Element => {
 
   return (
     <React.Fragment>
-      <div className='content justify-center browser-detector'>
+      <div className='m-auto text-center'>
         {isKnownBrowser
           && <React.Fragment>
-            <p className='text'>
+            <p className='text-4xl text-center mb-4'>
               You are viewing this page in -
-              <span className='browser-name'>{'{'}{parsedUA.name as string}{'}'}</span>
+              <span className='text-red-600'>{'{'}{parsedUA.name as string}{'}'}</span>
             </p>
-            <p className='sub-text'>{parsedUA.platform as string}, v{parsedUA.version}</p>
+            <p className='whitespace-nowrap text-red-700 text-lg'>{parsedUA.platform as string}, v{parsedUA.version}</p>
           </React.Fragment>
         }
         {!isKnownBrowser
-          && <p className='text'><span className='browser-name'>{'{ Unknown Browser }'}</span></p>
+          && <p className='text-4xl text-red-600'>{'{ Unknown Browser }'}</p>
         }
       </div>
-      <footer className='footer'>BrowserDetector: v{BrowserDetector.VERSION}</footer>
+      <footer className='absolute bottom-2 left-4 text-sm'>BrowserDetector: v{BrowserDetector.VERSION}</footer>
     </React.Fragment>
   );
 };
