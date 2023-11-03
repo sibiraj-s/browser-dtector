@@ -1,38 +1,4 @@
-export declare const KnownBrowsers: {
-  chrome: string;
-  brave: string;
-  crios: string;
-  edge: string;
-  edg: string;
-  fennec: string;
-  jsdom: string;
-  mozilla: string;
-  msie: string;
-  opera: string;
-  opios: string;
-  opr: string;
-  opt: string;
-  rv: string;
-  safari: string;
-  samsungbrowser: string;
-  electron: string;
-};
-
-export declare const KnownPlatforms: {
-  android: string;
-  androidTablet: string;
-  cros: string;
-  fennec: string;
-  ipad: string;
-  iphone: string;
-  jsdom: string;
-  linux: string;
-  mac: string;
-  tablet: string;
-  win: string;
-  'windows phone': string;
-  xbox: string;
-};
+import { KnownBrowsers, KnownPlatforms } from './constants';
 
 declare type ValueOf<T> = T[keyof T];
 export type KnownBrowsersKeys = keyof typeof KnownBrowsers;
