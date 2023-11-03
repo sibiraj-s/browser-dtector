@@ -14,7 +14,18 @@ All notable changes to this project will be documented in this file.
 > - Internal
 > - Unreleased
 
-## v4.0.0 (2023-07-12)
+## v4.1.0 (2023-11-03)
+
+#### Features
+
+- add assertions for chrome, edge, firefox, safari and opera browsers ([5da4dcc](https://github.com/sibiraj-s/browser-dtector/commit/5da4dcc))
+
+#### Bug Fixes
+
+- cleanup usage of old definitions ([5da4dcc](https://github.com/sibiraj-s/browser-dtector/commit/5da4dcc))
+- fix name and platfrom types returned from parseUserAgent ([2adf558](https://github.com/sibiraj-s/browser-dtector/commit/2adf558))
+
+## v4.0.0 (2023-10-25)
 
 #### Features
 
