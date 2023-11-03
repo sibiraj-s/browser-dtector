@@ -26,6 +26,7 @@ export const KnownPlatforms = {
   'cros': 'Chrome OS',
   'fennec': 'Android Tablet',
   'ipad': 'IPad',
+  'ipod': 'IPod',
   'iphone': 'IPhone',
   'jsdom': 'JsDOM',
   'linux': 'Linux',

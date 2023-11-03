@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
 
 import BrowserDetector from '../lib/browser-dtector';
-import { BrowserInfoFull } from '../lib/types';
 
 const currentUserAgent = window.navigator.userAgent;
 const browser = new BrowserDetector(currentUserAgent);
 
 interface DisplayTable {
   name: string;
-  key: keyof BrowserInfoFull;
+  key: keyof ReturnType<typeof browser.parseUserAgent>;
 }
 
 const uaDisplayTable: DisplayTable[] = [

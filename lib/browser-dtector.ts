@@ -4,11 +4,9 @@ import utils from './utils';
 import { version as pkgVersion } from '../package.json';
 
 import {
-  BrowserInfoFull,
   BrowserMatches,
   KnownBrowsersKeys,
   KnownPlatformsKeys,
-  BrowserInfo,
   NavigatorExtended,
 } from './types';
 
@@ -31,8 +29,8 @@ class BrowserDetector {
     return pkgVersion;
   }
 
-  parseUserAgent(userAgent?: string): BrowserInfoFull {
-    const browserMatches: BrowserMatches = {};
+  parseUserAgent(userAgent?: string) {
+    const browserMatches: BrowserMatches = {} as BrowserMatches;
 
     const uaFresh = userAgent || this.userAgent || '';
 
@@ -92,10 +90,10 @@ class BrowserDetector {
     }
 
     if (name) {
-      browserMatches[name] = true;
+      browserMatches[name as KnownBrowsersKeys] = true;
     }
     if (platform) {
-      browserMatches[platform] = true;
+      browserMatches[platform as KnownPlatformsKeys] = true;
     }
 
     const isAndroid = Boolean(browserMatches.tablet
@@ -130,7 +128,25 @@ class BrowserDetector {
     const isIE = Boolean(browserMatches.msie
       || browserMatches.rv);
 
-    const browserInfo: BrowserInfoFull = {
+    const isChrome = Boolean(browserMatches.chrome
+      || browserMatches.crios);
+
+    const isFireFox = Boolean(browserMatches.fxios
+      || browserMatches.fennec
+      || browserMatches.mozilla);
+
+    const isSafari = Boolean(browserMatches.safari);
+
+    const isOpera = Boolean(browserMatches.opera
+      || browserMatches.opios
+      || browserMatches.opr
+      || browserMatches.opt);
+
+    const isEdge = Boolean(browserMatches.edg
+      || browserMatches.edge
+      || browserMatches.edgios);
+
+    const browserInfo = {
       name: KnownBrowsers[name as KnownBrowsersKeys] ?? null,
       platform: KnownPlatforms[platform as KnownPlatformsKeys] ?? null,
       userAgent: uaFresh,
@@ -142,12 +158,17 @@ class BrowserDetector {
       isDesktop,
       isWebkit,
       isIE,
+      isChrome,
+      isFireFox,
+      isSafari,
+      isOpera,
+      isEdge,
     };
 
     return browserInfo;
   }
 
-  getBrowserInfo(): BrowserInfo {
+  getBrowserInfo() {
     const browserInfo = this.parseUserAgent();
 
     return {
