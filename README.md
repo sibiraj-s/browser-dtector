@@ -33,7 +33,8 @@ browser.parseUserAgent();
 
 **Usage in Node.js:**
 
-_Note_: while using in nodejs, it is mandatory to input `useragent`.
+> [!IMPORTANT]
+> While using in nodejs, it is mandatory to input `useragent`.
 
 ```js
 const http = require('http');
