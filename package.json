@@ -5,7 +5,7 @@
   "author": "sibiraj-s",
   "license": "MIT",
   "type": "module",
-  "repository": "https://github.com/sibiraj-s/browser-dtector.git",
+  "repository": "github:sibiraj-s/browser-dtector",
   "homepage": "https://github.com/sibiraj-s/browser-dtector#readme",
   "bugs": "https://github.com/sibiraj-s/browser-dtector/issues",
   "funding": [
