@@ -5,7 +5,7 @@ import '@fontsource-variable/inconsolata';
 
 import App from './App';
 
-import './index.scss';
+import './index.css';
 
 const container = document.getElementById('__root') as HTMLElement;
 const root = ReactDOM.createRoot(container);

@@ -43,7 +43,7 @@
     "dev": "vite",
     "test": "vitest",
     "lint": "eslint . --ext .js,.ts --ignore-path .gitignore",
-    "prepare": "is-ci || husky install"
+    "prepare": "is-ci || husky"
   },
   "keywords": [
     "browser-detector",
@@ -55,9 +55,9 @@
     "@commitlint/cli": "^19.7.1",
     "@commitlint/config-conventional": "^19.7.1",
     "@fontsource-variable/inconsolata": "^5.1.1",
+    "@tailwindcss/vite": "^4.0.3",
     "@types/react": "^19.0.8",
     "@types/react-dom": "^19.0.3",
-    "autoprefixer": "^10.4.20",
     "eslint": "^8.57.1",
     "eslint-config-pegasus": "^5.0.0",
     "eslint-plugin-react": "^7.37.4",
@@ -71,8 +71,7 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-router-dom": "^6.29.0",
-    "sass": "^1.83.4",
-    "tailwindcss": "^3.4.17",
+    "tailwindcss": "^4.0.3",
     "tsup": "^8.3.6",
     "typescript": "^5.7.3",
     "vite": "^6.0.11",
