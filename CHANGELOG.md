@@ -14,6 +14,12 @@ All notable changes to this project will be documented in this file.
 > - Internal
 > - Unreleased
 
+## v4.1.1 (2025-12-01)
+
+#### Bug Fixes
+
+- fix return types for parseUserAgent ([08cab55](https://github.com/sibiraj-s/browser-dtector/commit/08cab55))
+
 ## v4.1.0 (2023-11-03)
 
 #### Features
