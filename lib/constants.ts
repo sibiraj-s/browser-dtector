@@ -18,7 +18,7 @@ export const KnownBrowsers = {
   safari: 'Safari',
   samsungbrowser: 'Samsung Browser',
   electron: 'Electron',
-};
+} as const;
 
 export const KnownPlatforms = {
   'android': 'Android',
@@ -35,4 +35,4 @@ export const KnownPlatforms = {
   'win': 'Windows',
   'windows phone': 'Windows Phone',
   'xbox': 'Microsoft Xbox',
-};
+} as const;

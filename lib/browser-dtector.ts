@@ -7,6 +7,7 @@ import {
   BrowserMatches,
   KnownBrowsersKeys,
   KnownPlatformsKeys,
+  BrowserInfo,
   NavigatorExtended,
 } from './types';
 
@@ -146,9 +147,9 @@ class BrowserDetector {
       || browserMatches.edge
       || browserMatches.edgios);
 
-    const browserInfo = {
-      name: KnownBrowsers[name as KnownBrowsersKeys] ?? null,
-      platform: KnownPlatforms[platform as KnownPlatformsKeys] ?? null,
+    const browserInfo: BrowserInfo = {
+      name: (name ? KnownBrowsers[name as KnownBrowsersKeys] : null) ?? null,
+      platform: (platform ? KnownPlatforms[platform as KnownPlatformsKeys] : null) ?? null,
       userAgent: uaFresh,
       version,
       shortVersion: version ? utils.toFixed(parseFloat(version), 2) : null,

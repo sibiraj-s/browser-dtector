@@ -51,7 +51,7 @@ const assert = (testData: TestData): void => {
   expect(typeof browserDetect.getBrowserInfo()).toBe('object');
 };
 
-export const assertPasreUserAgent = (testData: TestData):void => {
+export const assertPasreUserAgent = (testData: TestData): void => {
   const {
     userAgent,
     browserName,
