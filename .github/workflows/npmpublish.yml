@@ -13,6 +13,10 @@ jobs:
     permissions:
       contents: read
       id-token: write
+    
+    environment:
+      name: npm
+      url: https://npm.im/browser-dtector
 
     steps:
       - uses: actions/checkout@v6
