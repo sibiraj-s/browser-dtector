@@ -14,7 +14,7 @@ permissions:
 
 jobs:
   test:
-    name: Jest
+    name: Unit Tests
     runs-on: ubuntu-latest
 
     steps:
@@ -30,7 +30,7 @@ jobs:
       - name: NPM Install
         run: npm ci
 
-      - name: Run Jest Tests
+      - name: Run Unit Tests
         run: npm run test --if-present
 
   build:

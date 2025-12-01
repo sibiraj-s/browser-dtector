@@ -4,7 +4,7 @@ import BrowserDetector from '../lib/browser-dtector';
 import assert from './assert';
 import pkgJson from '../package.json';
 
-it('should detect default useragent running in `jest`', () => {
+it('should detect default useragent running in `vitest`', () => {
   const browserDetect = new BrowserDetector();
   const browserInfo = browserDetect.parseUserAgent();
 
@@ -13,7 +13,7 @@ it('should detect default useragent running in `jest`', () => {
   expect(browserInfo.name).not.toBe('Unknown');
 });
 
-it('should detect default useragent running in `jest` while invoked via `parseUserAgent`', () => {
+it('should detect default useragent running in `vitest` while invoked via `parseUserAgent`', () => {
   const ua = 'Mozilla/5.0 (darwin) AppleWebKit/537.36 (KHTML, like Gecko) jsdom/11.12.0';
   const browserDetect = new BrowserDetector();
   const browserInfo = browserDetect.parseUserAgent(ua);

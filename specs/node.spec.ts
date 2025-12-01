@@ -1,6 +1,4 @@
-/**
- * @jest-environment node
- */
+// @vitest-environment node
 import { it } from 'vitest';
 import assert, { assertPasreUserAgent } from './assert';
 
