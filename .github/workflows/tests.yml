@@ -9,6 +9,9 @@ on:
 env:
   NODE_VERSION: 24
 
+permissions:
+  contents: read
+
 jobs:
   test:
     name: Jest
