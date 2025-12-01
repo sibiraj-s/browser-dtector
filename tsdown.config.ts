@@ -1,8 +1,7 @@
-import { defineConfig } from 'tsup';
+import { defineConfig } from 'tsdown';
 
 export default defineConfig({
   entry: ['lib/browser-dtector.ts'],
-  splitting: false,
   sourcemap: true,
   clean: true,
   outDir: 'dist',

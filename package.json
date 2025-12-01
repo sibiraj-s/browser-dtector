@@ -22,8 +22,8 @@
     "dist"
   ],
   "main": "./dist/browser-dtector.cjs",
-  "module": "./dist/browser-dtector.js",
-  "types": "./dist/browser-dtector.d.ts",
+  "module": "./dist/browser-dtector.mjs",
+  "types": "./dist/browser-dtector.d.mts",
   "exports": {
     ".": {
       "require": {
@@ -31,14 +31,14 @@
         "default": "./dist/browser-dtector.cjs"
       },
       "import": {
-        "types": "./dist/browser-dtector.d.ts",
-        "default": "./dist/browser-dtector.js"
+        "types": "./dist/browser-dtector.d.mts",
+        "default": "./dist/browser-dtector.mjs"
       }
     },
     "./package.json": "./package.json"
   },
   "scripts": {
-    "build": "tsup",
+    "build": "tsdown",
     "build:docs": "vite build --base /browser-dtector/",
     "dev": "vite",
     "test": "vitest",
@@ -69,7 +69,7 @@
     "react-dom": "^19.2.0",
     "react-router-dom": "^7.9.6",
     "tailwindcss": "^4.1.17",
-    "tsup": "^8.5.1",
+    "tsdown": "^0.17.0-beta.4",
     "typescript": "^5.9.3",
     "vite": "^7.2.4",
     "vitest": "^4.0.14"
