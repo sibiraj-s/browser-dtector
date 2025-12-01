@@ -1,1 +1,1 @@
-'*.{js,ts,tsx}': eslint --fix
+'*.{js,ts,tsx}': oxlint --fix
